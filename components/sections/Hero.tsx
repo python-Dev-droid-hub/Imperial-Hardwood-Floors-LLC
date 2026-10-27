@@ -9,7 +9,7 @@ export function Hero() {
     <section
       id="home"
       className="hero-root relative h-[100svh] min-h-[36rem] overflow-hidden bg-charcoal text-ivory"
-      aria-label="Residential framing in Bellingham"
+      aria-label="Floor installation in Olathe"
     >
       <div className="absolute inset-0">
         <Image
@@ -26,8 +26,8 @@ export function Hero() {
       </div>
 
       <div className="relative z-10 flex h-full items-end md:items-center">
-        <div className="mx-auto w-full max-w-7xl px-5 pb-16 pt-28 drop-shadow-[0_2px_24px_rgba(20,18,16,0.45)] md:px-8 md:pb-24 md:pt-32">
-          <p className="mb-5 text-[0.68rem] font-semibold uppercase tracking-[0.32em] text-copper-bright md:mb-6">
+        <div className="mx-auto w-full max-w-7xl px-5 pb-16 pt-36 drop-shadow-[0_2px_24px_rgba(20,18,16,0.45)] md:px-8 md:pb-24 md:pt-44">
+          <p className="mb-5 mt-2 text-[0.68rem] font-semibold uppercase tracking-[0.32em] text-copper-bright md:mb-6 md:mt-4">
             {heroContent.eyebrow}
           </p>
 

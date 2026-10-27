@@ -52,19 +52,18 @@ export function Header() {
           : "bg-transparent"
       }`}
     >
-      <div className="mx-auto flex h-[4.25rem] max-w-7xl items-center justify-between gap-4 px-5 md:h-[4.75rem] md:px-8">
+      <div className="mx-auto flex h-[5rem] max-w-7xl items-center justify-between gap-4 px-5 md:h-[5.5rem] md:px-8">
         <Link
           href="#home"
           className="relative z-10 flex shrink-0 items-center text-ivory focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-copper"
           onClick={closeMenu}
         >
-          {/* Plain img: black logo on transparent; invert for dark header */}
           <img
-            src="/logo.png"
+            src="/logo.png?v=2"
             alt={`${site.businessName} logo`}
-            width={160}
-            height={64}
-            className="block h-9 w-auto object-contain object-left invert md:h-10"
+            width={280}
+            height={116}
+            className="block h-12 w-auto max-w-[min(70vw,15rem)] object-contain object-left md:h-14 md:max-w-[18rem]"
           />
         </Link>
 

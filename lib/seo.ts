@@ -2,15 +2,15 @@ import { site } from "@/content/site";
 import { getSiteUrl } from "@/lib/site-url";
 
 export const seo = {
-  title: `Residential Framing in Bellingham, WA | ${site.businessName}`,
-  description: `Residential framing for new construction, additions, and home projects in Bellingham, Washington. Contact ${site.contactName} at ${site.email}. Hours: ${site.hoursShort} Pacific Time.`,
+  title: `Floor Installation in Olathe, KS | ${site.businessName}`,
+  description: `Floor installation for homes and remodel projects in Olathe, Kansas. Contact ${site.contactName} at ${site.email}. Hours: ${site.hoursShort} Central Time.`,
   keywords: [
-    "residential framing Bellingham",
-    "residential framing Bellingham WA",
-    "home framing contractor Bellingham",
-    "Joyner Construction LLC",
+    "floor installation Olathe",
+    "hardwood floor installation Olathe KS",
+    "hardwood flooring contractor Olathe",
+    "Imperial Hardwood Floors LLC",
   ],
-  ogImagePath: "/images/hero/framing-neighborhood.webp",
+  ogImagePath: "/images/hero/floor-hero.jpg",
   locale: "en_US",
 } as const;
 
@@ -24,30 +24,32 @@ export function buildLocalBusinessJsonLd() {
     name: site.businessName,
     description: seo.description,
     email: site.email,
+    telephone: site.phone,
     image: siteUrl ? `${siteUrl}/logo.png` : undefined,
     logo: siteUrl ? `${siteUrl}/logo.png` : undefined,
     url: siteUrl || undefined,
     areaServed: {
       "@type": "City",
-      name: "Bellingham",
+      name: "Olathe",
       containedInPlace: {
         "@type": "State",
-        name: "Washington",
+        name: "Kansas",
       },
     },
     knowsAbout: [
-      "Residential framing",
-      "New home framing",
-      "Home addition framing",
-      "Renovation framing",
+      "Floor installation",
+      "Hardwood floor installation",
+      "Residential flooring",
+      "Floor replacement",
     ],
     contactPoint: {
       "@type": "ContactPoint",
       contactType: "customer service",
       email: site.email,
+      telephone: site.phone,
       availableLanguage: "English",
     },
-    // Hours supplied by the business; Bellingham observes America/Los_Angeles.
+    // Hours supplied by the business; Olathe observes America/Chicago.
     openingHoursSpecification: {
       "@type": "OpeningHoursSpecification",
       dayOfWeek: [

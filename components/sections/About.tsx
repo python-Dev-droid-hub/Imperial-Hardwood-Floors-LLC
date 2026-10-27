@@ -3,7 +3,7 @@
 import { useRef } from "react";
 import { AboutOrbit } from "@/components/sections/AboutOrbit";
 import { Button } from "@/components/ui/Button";
-import { aboutContent, site } from "@/content/site";
+import { aboutContent } from "@/content/site";
 import { useReveal } from "@/hooks/useReveal";
 
 export function About() {
@@ -33,9 +33,6 @@ export function About() {
               <p key={paragraph}>{paragraph}</p>
             ))}
           </div>
-          <p className="about-locale mt-5 text-sm font-semibold uppercase tracking-[0.18em] text-charcoal/55">
-            Serving {site.location}
-          </p>
           <div className="about-cta mt-8">
             <Button href={aboutContent.cta.href} variant="primaryOnLight">
               {aboutContent.cta.label}
@@ -46,7 +43,7 @@ export function About() {
         <div className="about-visual w-full overflow-visible" data-reveal>
           <AboutOrbit />
           <p className="mt-2 text-center text-xs text-stone">
-            Tap a node to explore each stage of residential framing.
+            Tap a node to explore each stage of floor installation.
           </p>
         </div>
       </div>

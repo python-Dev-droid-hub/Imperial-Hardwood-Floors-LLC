@@ -39,7 +39,7 @@ export function EstimateForm() {
     }
     if (values.projectDetails.trim().length < 10) {
       next.projectDetails =
-        "Please share a bit more about your framing project.";
+        "Please share a bit more about your floor installation project.";
     }
     if (!values.consent) {
       next.consent = "Consent is required so we can contact you.";
@@ -78,7 +78,7 @@ export function EstimateForm() {
           type: "error",
           message:
             data.error ||
-            "Something went wrong. Please email joynerconstllc@gmail.com.",
+            "Something went wrong. Please email imperialhardwoodfloor@gmail.com.",
         });
         return;
       }
@@ -94,7 +94,7 @@ export function EstimateForm() {
       setStatus({
         type: "error",
         message:
-          "Network error. Please try again or email joynerconstllc@gmail.com.",
+          "Network error. Please try again or email imperialhardwoodfloor@gmail.com.",
       });
     }
   }
@@ -201,7 +201,7 @@ export function EstimateForm() {
             setValues((v) => ({ ...v, projectDetails: e.target.value }))
           }
           className={`${fieldClass} resize-y`}
-          placeholder="New home, addition, or renovation framing in Bellingham…"
+          placeholder="New hardwood, replacement, or remodel install in Olathe…"
           aria-invalid={Boolean(errors.projectDetails)}
           aria-describedby={
             errors.projectDetails ? "estimate-details-error" : undefined
@@ -230,7 +230,7 @@ export function EstimateForm() {
             aria-invalid={Boolean(errors.consent)}
           />
           <span>
-            I agree to be contacted by Joyner Construction LLC about this
+            I agree to be contacted by Imperial Hardwood Floors LLC about this
             estimate request. <span className="text-copper">*</span>
           </span>
         </label>

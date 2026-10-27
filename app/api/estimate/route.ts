@@ -37,7 +37,7 @@ export async function POST(request: Request) {
   if (!isEmail(email)) errors.email = "Please enter a valid email address.";
   if (projectDetails.length < 10) {
     errors.projectDetails =
-      "Please share a bit more about your framing project.";
+      "Please share a bit more about your floor installation project.";
   }
   if (!consent) {
     errors.consent = "Consent is required so we can contact you.";
@@ -67,7 +67,7 @@ export async function POST(request: Request) {
         phone: phone || undefined,
         projectDetails,
         consent,
-        source: "joynerconstructionllc-residential-framing-bellingham",
+        source: "imperialhardwoodfloors-floor-installation-olathe",
       }),
     });
 

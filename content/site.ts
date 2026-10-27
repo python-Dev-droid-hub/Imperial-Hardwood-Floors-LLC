@@ -1,23 +1,23 @@
 export const site = {
-  businessName: "Joyner Construction LLC",
-  contactName: "Michael Joyner",
-  email: "joynerconstllc@gmail.com",
+  businessName: "Imperial Hardwood Floors LLC",
+  contactName: "Imperial Hardwood Floors",
+  email: "imperialhardwoodfloor@gmail.com",
   /** Public listing phone — confirm before marketing push. */
-  phone: "(360) 595-8365",
-  phoneHref: "tel:+13605958365",
+  phone: "(913) 927-3985",
+  phoneHref: "tel:+19139273985",
   hours: "Monday–Saturday, 8:00 AM–7:00 PM",
   hoursShort: "Mon–Sat, 8 AM–7 PM",
-  /** Displayed with hours; Bellingham, WA uses Pacific Time. */
-  hoursTimezoneLabel: "Pacific Time",
-  service: "Residential framing",
-  location: "Bellingham, Washington",
-  locationShort: "Bellingham, WA",
-  /** Areas named in the footer. Primary focus of this page remains Bellingham. */
+  /** Displayed with hours; Olathe, KS uses Central Time. */
+  hoursTimezoneLabel: "Central Time",
+  service: "Floor installation",
+  location: "Olathe, Kansas",
+  locationShort: "Olathe, KS",
+  /** Areas named in the footer. Primary focus of this page remains Olathe. */
   servingAreas: [
-    "Bellingham, WA",
-    "Ferndale, WA",
-    "Lynden, WA",
-    "Burlington, WA",
+    "Olathe, KS",
+    "Overland Park, KS",
+    "Lenexa, KS",
+    "Shawnee, KS",
   ] as const,
   /** Static for Cache Components / prerender — update yearly. */
   copyrightYear: 2026,
@@ -40,165 +40,165 @@ export const footerLinks = [
 ] as const;
 
 export const heroContent = {
-  eyebrow: "Joyner Construction LLC",
+  eyebrow: "Imperial Hardwood Floors LLC",
   /** Primary H1 — one service, one location */
-  headline: "Residential Framing in Bellingham, WA",
-  brandLine: "A Strong Frame. A Better Home.",
+  headline: "Floor Installation in Olathe, KS",
+  brandLine: "Hardwood Floors, Installed Right.",
   supporting:
-    "Structural framing for new homes, additions, and residential projects in the Bellingham area. Request an estimate from Joyner Construction LLC.",
+    "Professional hardwood floor installation for homes across Olathe and nearby Johnson County. Request a clear estimate from Imperial Hardwood Floors LLC.",
   primaryCta: { label: "Request an Estimate", href: "#contact" },
   secondaryCta: { label: "About Us", href: "#about" },
 } as const;
 
 export const aboutContent = {
   eyebrow: "About Us",
-  heading: "Framing the Foundation of Your Home.",
+  heading: "Hardwood Floors Built for Everyday Living.",
   paragraphs: [
-    "Quality framing is the structural backbone of a home. Walls, floors, and roofs depend on accurate layout, solid connections, and careful workmanship long before finishes go on.",
-    "Joyner Construction LLC provides residential framing for new construction and home projects in Bellingham, Washington—focused on clean, dependable structure that supports the rest of the build.",
+    "A great hardwood floor starts with careful install work—accurate layout, clean cuts, proper fastening, and transitions that look intentional from room to room.",
+    "Imperial Hardwood Floors LLC installs hardwood floors for homeowners in Olathe, Kansas. We keep the process practical: scope the rooms, confirm the product and prep, then install with clean workmanship and clear communication.",
   ],
   cta: { label: "Request an Estimate", href: "#contact" },
   image: {
-    src: "/images/hero/frame-beams.jpg",
-    alt: "Residential wood framing under construction for a home project",
+    src: "/images/hero/floor-detail.jpg",
+    alt: "Wide-plank hardwood flooring installed through a residential hallway",
   },
 } as const;
 
 export const servicesContent = {
-  eyebrow: "Framing Services",
-  title: "Residential Framing for Homes in Bellingham",
+  eyebrow: "Floor Installation",
+  title: "Hardwood Floor Installation in Olathe",
   description:
-    "This page focuses on residential framing—the structural woodwork that shapes walls, floors, and roof systems. Scope is confirmed during project discussion so every estimate matches the work you need.",
+    "Focused hardwood floor installation for new homes, replacements, and remodel projects. Scope is confirmed during project discussion so every estimate matches the rooms and work you need.",
   items: [
     {
-      title: "New Home Framing",
-      body: "Structural framing for new residential construction, from layout through walls, floors, and roof framing as the project requires.",
-      image: "/images/hero/frame-main.jpg",
-      alt: "New residential home framing with exposed wall and floor structure",
+      title: "New Hardwood Installation",
+      body: "Full hardwood floor installation for new construction and empty rooms—from layout and starting lines through fastening and finish-ready surfaces.",
+      image: "/images/hero/floor-hero.jpg",
+      alt: "Dark hardwood flooring installed in a finished bedroom",
     },
     {
-      title: "Home Addition Framing",
-      body: "Framing support for residential additions, with careful attention to how new structure meets the existing home.",
-      image: "/images/hero/frame-beams.jpg",
-      alt: "Timber framing details for a residential addition project",
+      title: "Floor Replacement",
+      body: "Remove the old surface and install new hardwood with careful attention to thresholds, baseboards, and transitions between rooms.",
+      image: "/images/hero/floor-planks.jpg",
+      alt: "Light hardwood flooring spanning an open living and dining space",
     },
     {
-      title: "Renovation Framing",
-      body: "Framing work within renovation projects where walls, openings, or structural updates need precise carpentry.",
-      image: "/images/hero/frame-detail.jpg",
-      alt: "Structural framing work on an active residential construction site",
+      title: "Remodel & Room Installs",
+      body: "Hardwood installation for remodeled kitchens, living rooms, hallways, and expanded living space that needs to match or renew the rest of the home.",
+      image: "/images/hero/floor-living.jpg",
+      alt: "Hardwood flooring in a remodeled residential living space",
     },
   ],
 } as const;
 
 export const serviceAreaContent = {
   eyebrow: "Service Area",
-  title: "Residential Framing in Bellingham, WA",
+  title: "Floor Installation in Olathe, KS",
   intro:
-    "Joyner Construction LLC focuses this page on residential framing for homeowners and residential projects in Bellingham, Washington. If you are planning a new home, addition, or renovation that needs a clean, dependable structural frame, this is where that conversation starts.",
+    "Imperial Hardwood Floors LLC focuses this page on hardwood floor installation for homeowners in Olathe, Kansas. If you need new floors, a replacement, or install work as part of a remodel, this is where that conversation starts.",
   sections: [
     {
-      heading: "Built around one city, one trade",
+      heading: "One trade, one local focus",
       body: [
-        "Many construction sites try to cover every trade and every town at once. This page does the opposite. It is written for residential framing in Bellingham—walls, floors, roofs, and the structural skeleton that everything else depends on. That focus keeps the message honest: the work is structural, the geography is local, and the next step is a clear estimate conversation with Michael Joyner.",
-        "Bellingham homeowners plan projects against a specific backdrop—Pacific Northwest weather, mixed older and newer neighborhoods, hillside lots, and waterfront-adjacent sites. Framing decisions here are not abstract. Layout accuracy, fastening, openings, and sequencing all matter more when the rest of the build has to move through rain seasons, inspections, and coordination with other trades.",
+        "This page is written for hardwood floor installation in Olathe—not every flooring product and not every city at once. That focus keeps the message honest: the work is install, the geography is local, and the next step is a clear estimate conversation about your rooms and timeline.",
+        "Olathe homes range from newer builds to established neighborhoods across Johnson County. Install decisions here are practical—subfloor condition, moisture, transitions, furniture moves, and living around an active job all belong in the plan before boards go down.",
       ],
     },
     {
-      heading: "New home framing in Bellingham",
+      heading: "New hardwood floors in Olathe",
       body: [
-        "New residential construction needs a frame that matches the plans and stands ready for mechanicals, insulation, and finishes. From sill plates and floor systems to wall panels and roof framing, the goal is square, solid structure—not shortcuts that show up later as out-of-plumb walls or uneven floors.",
-        "When you request an estimate for a new home in Bellingham, share whatever you already have: architectural drawings, engineer notes, preferred timing, and site access details. Scope is confirmed in discussion. Timelines depend on readiness of the site, material lead times, and how framing fits into the broader build schedule. Those variables are talked through directly instead of being buried in marketing promises.",
+        "New hardwood needs careful layout, acclimation awareness, and solid fastening so the floor looks even and stays quiet underfoot. From starting lines to doorways and transitions, the goal is a clean install that holds up to daily living.",
+        "When you request an estimate, share room sizes or a rough floor plan, product preferences, preferred timing, and access details. Scope is confirmed in discussion. Timelines depend on material readiness, site conditions, and how install fits into the rest of your project.",
       ],
       subheadings: [
         {
-          title: "What a strong new-home frame supports",
+          title: "What a clean install protects",
           body: [
-            "A well-executed frame protects every trade that follows. Plumbers, electricians, HVAC crews, and finish carpenters all work more cleanly when openings are right, walls are true, and connections are solid. That is the practical standard Joyner Construction LLC brings to residential framing work in the Bellingham area.",
+            "Good install work protects both the look of the floor and everyday comfort. Transitions, expansion gaps, and fastening all work better when the plan is clear up front. That is the standard Imperial Hardwood Floors LLC brings to hardwood installation in the Olathe area.",
           ],
         },
       ],
     },
     {
-      heading: "Home additions that tie into existing structure",
+      heading: "Replacing existing floors",
       body: [
-        "Additions are often more nuanced than new builds because the new frame has to meet an existing home. Matching floor elevations, aligning wall planes, protecting openings, and planning load paths all require careful layout. Homeowners in Bellingham commonly expand for bedrooms, living space, or multi-generational living—projects where the connection between old and new has to feel intentional, not patched on.",
-        "An addition estimate conversation usually covers access, temporary protection, sequencing around occupied living space, and how the framed addition will hand off to exterior and interior finishes. Bring sketches or plans if you have them. If you are earlier in the process, a short written description of the rooms and goals is still a useful starting point.",
+        "Replacement installs are often more involved than empty-room jobs because thresholds, baseboards, and adjacent surfaces set real constraints. Matching elevations and protecting doorways matters when the finished floor has to feel continuous—not patched in.",
+        "An estimate conversation usually covers tear-out needs, temporary protection, sequencing around occupied living space, and how the new floor hands off to trim. Bring product samples or links if you have them; a short room list still works early on.",
       ],
     },
     {
-      heading: "Renovation framing and structural changes",
+      heading: "Remodels and expanded living space",
       body: [
-        "Renovation framing can mean opening walls, reframing for new layouts, strengthening areas for new loads, or rebuilding portions of a structure after selective demolition. These jobs reward careful measuring and clear communication because the existing home sets constraints that a blank lot never will.",
-        "Joyner Construction LLC approaches renovation framing as structural work first. The conversation stays on scope: what is being removed, what is being rebuilt, what needs temporary support, and how the finished frame should leave the project ready for the next phase. No inflated claims—just a practical path from inquiry to scoped estimate.",
+        "Remodel installs can mean matching an existing hardwood look, continuing a pattern into a new room, or starting fresh after a kitchen or living-area update. These jobs reward careful measuring because the existing home sets the rules.",
+        "We keep the conversation on scope: what product is going in, how it meets existing floors, what prep is needed, and how the finished floor should leave the space ready for trim and living. No inflated claims—just a practical path from inquiry to scoped estimate.",
       ],
       subheadings: [
         {
-          title: "When renovation framing is the right conversation",
+          title: "When to start the estimate talk",
           body: [
-            "If your remodel changes room layouts, creates larger openings, or affects floors and roofs, you need framing clarity before finishes are selected. Starting that discussion early helps avoid redesign mid-project and keeps expectations aligned with what the structure can support.",
+            "If you are choosing hardwood for a remodel, replacement, or new living space, clarify install scope before the product is ordered. Starting early helps avoid mid-project surprises and keeps expectations aligned with the space and timeline.",
           ],
         },
       ],
     },
     {
-      heading: "Local context: weather, sites, and sequencing",
+      heading: "Local context: homes, schedules, and sequencing",
       body: [
-        "Bellingham’s climate and topography influence how residential framing projects should be planned. Moisture, access on narrower lots, and coordination around school-year or seasonal schedules can all affect when framing starts and how the site is kept organized. Those realities belong in the estimate conversation, not in generic national copy.",
-        "A focused Bellingham service-area page also helps you know what this business is—and is not—claiming. This page is for residential framing in Bellingham. Nearby communities may be discussed case by case, and separate location pages can be published later if coverage expands in a documented way. Until then, the commitment on this site stays specific.",
+        "Kansas climate and Olathe’s housing mix influence how hardwood installs should be planned. Humidity, access in finished homes, and family schedules can all affect when install starts and how the site stays organized. Those realities belong in the estimate conversation.",
+        "This page is for floor installation in Olathe. Nearby communities may be discussed case by case. Until separate location pages are published, the commitment on this site stays specific.",
       ],
     },
     {
-      heading: "Working with plans, builders, and other trades",
+      heading: "Working with product choices and other trades",
       body: [
-        "Residential framing rarely happens in isolation. Plans change, engineers issue clarifications, and other trades need access windows. A useful framing partner keeps communication practical: what is locked, what is still open, and what the frame must accommodate next. That matters whether you are a homeowner managing your own project or coordinating with a broader residential build team in Bellingham.",
-        "Bring questions about openings, bearing walls, roof transitions, and site logistics early. The clearer those details are, the cleaner the estimate and the smoother the handoff once framing is complete. Joyner Construction LLC stays focused on the structural stage so the rest of the home can proceed on a solid base.",
+        "Floor installation rarely happens alone. Product lead times, trim work, painters, and furniture moves all need windows. A useful install partner keeps communication practical: what is locked, what is still open, and what the floor must accommodate next.",
+        "Bring questions about transitions, underlayment, moisture, and site logistics early. The clearer those details are, the cleaner the estimate and the smoother the handoff once installation is complete.",
       ],
     },
     {
       heading: "How to start an estimate",
       body: [
-        "Use the contact form on this page or email Michael Joyner directly. Include a short project description, your Bellingham location or neighborhood context, preferred timing, and any plans or sketches you can share. You will get a conversation focused on scope—not pressure and not invented reviews or ratings.",
-        "After the scope is understood, you receive an estimate tied to the discussed work. Scheduling depends on project readiness and coordination with other trades. That is the honest order of operations for residential framing: clarify the work, price the work, then plan the calendar.",
+        "Use the contact form on this page or email Imperial Hardwood Floors. Include a short project description, your Olathe location or neighborhood, preferred timing, and any product preferences or photos. You will get a conversation focused on scope—not pressure.",
+        "After the scope is understood, you receive an estimate tied to the discussed work. Scheduling depends on project readiness and material timing: clarify the work, price the work, then plan the calendar.",
       ],
     },
   ],
   note: "Other nearby communities may be covered on separate location pages when those pages are published.",
   cta: { label: "Request an Estimate", href: "#contact" },
   image: {
-    src: "/images/service-area/bellingham-landmark.jpg",
-    alt: "Historic 1892 brick landmark with clock tower in snowy Bellingham, Washington",
-    caption: "Bellingham, WA",
+    src: "/images/service-area/olathe-landmark.png",
+    alt: "Clock tower and plaza landmark in Olathe, Kansas",
+    caption: "Olathe, KS",
   },
 } as const;
 
 export const reviewsContent = {
   eyebrow: "Customer Reviews",
-  title: "Trusted for residential framing in Bellingham",
-  body: "Sample homeowner feedback for layout. Replace these with verified Joyner Construction LLC reviews when you have them—no invented star ratings.",
+  title: "Trusted for floor installation in Olathe",
+  body: "Sample homeowner feedback for layout. Replace these with verified Imperial Hardwood Floors LLC reviews when you have them—no invented star ratings.",
   cta: { label: "Talk About Your Project", href: "#contact" },
   testimonials: [
     {
       name: "Elena Brooks",
-      handle: "Homeowner · New construction",
+      handle: "Homeowner · New install",
       description:
-        "The walls were square and the layout matched the plans. Communication stayed clear from first walkthrough to final framing check.",
+        "The hardwood was laid clean and even. Communication stayed clear from first walkthrough to final walk-through.",
       image:
         "https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=160&h=160&q=80",
     },
     {
       name: "Marcus Hale",
-      handle: "Homeowner · Addition",
+      handle: "Homeowner · Replacement",
       description:
-        "Our addition frame lined up cleanly with the existing structure. Scheduling updates were straightforward—no surprises on site.",
+        "Our replacement floor lined up cleanly with existing transitions. Scheduling updates were straightforward—no surprises on site.",
       image:
         "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=160&h=160&q=80",
     },
     {
       name: "Priya Nair",
-      handle: "Homeowner · Renovation",
+      handle: "Homeowner · Remodel",
       description:
-        "Careful measuring and solid connections. The crew coordinated framing around the renovation scope without rushing the details.",
+        "Careful measuring and solid fastening. The crew coordinated installation around the remodel without rushing the details.",
       image:
         "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=160&h=160&q=80",
     },
@@ -206,7 +206,7 @@ export const reviewsContent = {
       name: "James Ortega",
       handle: "Builder · Residential",
       description:
-        "Reliable framing partner for residential work in Bellingham. Layout was accurate and the job was left ready for the next trades.",
+        "Reliable flooring partner for residential work in Olathe. Layout was accurate and the job was left ready for trim.",
       image:
         "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?auto=format&fit=crop&w=160&h=160&q=80",
     },
@@ -214,23 +214,23 @@ export const reviewsContent = {
       name: "Hannah Cole",
       handle: "Homeowner · New home",
       description:
-        "We always knew where the frame stood. Clean workmanship and a calm, organized site made the process easier to follow.",
+        "We always knew where the install stood. Clean workmanship and an organized site made the process easier to follow.",
       image:
         "https://images.unsplash.com/photo-1544005313-94ddf0286df2?auto=format&fit=crop&w=160&h=160&q=80",
     },
     {
       name: "Daniel Kim",
-      handle: "Homeowner · Addition",
+      handle: "Homeowner · Replacement",
       description:
-        "Structure first—exactly what we needed. Floors and walls felt solid, and questions were answered without sales pressure.",
+        "Quality first—exactly what we needed. Floors felt solid, and questions were answered without sales pressure.",
       image:
         "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=160&h=160&q=80",
     },
     {
       name: "Sofia Alvarez",
-      handle: "Homeowner · Renovation",
+      handle: "Homeowner · Remodel",
       description:
-        "Attention to fastening and openings made a real difference. The frame was ready for mechanicals without rework drama.",
+        "Attention to transitions and gaps made a real difference. The floor was ready for living without rework drama.",
       image:
         "https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=160&h=160&q=80",
     },
@@ -238,7 +238,7 @@ export const reviewsContent = {
       name: "Ryan Patel",
       handle: "Project coordinator",
       description:
-        "Good sequencing and clear scope talk. Framing stayed organized so the rest of the residential build could move forward.",
+        "Good sequencing and clear scope talk. Installation stayed organized so the rest of the remodel could move forward.",
       image:
         "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?auto=format&fit=crop&w=160&h=160&q=80",
     },
@@ -247,44 +247,44 @@ export const reviewsContent = {
 
 export const faqContent = {
   eyebrow: "FAQs",
-  title: "Questions About Residential Framing",
+  title: "Questions About Floor Installation",
   description:
-    "Straight answers about residential framing in Bellingham—scope, estimates, and what to share before we talk.",
+    "Straight answers about hardwood floor installation in Olathe—scope, estimates, and what to share before we talk.",
   image: {
-    src: "/images/hero/framing-neighborhood.webp",
-    alt: "Residential wood framing under construction in a neighborhood setting",
-    caption: "Residential framing · Bellingham",
+    src: "/images/hero/floor-room.jpg",
+    alt: "Hardwood flooring in a residential interior",
+    caption: "Floor installation · Olathe",
   },
   items: [
     {
-      question: "What residential framing work do you focus on?",
+      question: "What floor installation work do you focus on?",
       answer:
-        "This page covers residential framing for new construction, additions, and renovation projects in the Bellingham area. Specific scope is confirmed during project discussion.",
+        "This page covers hardwood floor installation for new installs, replacements, and remodel projects in the Olathe area. Specific scope is confirmed during project discussion.",
     },
     {
       question: "How do I request an estimate?",
       answer:
-        "Use the estimate form on this page or email Michael Joyner directly. Include a short project description, location in Bellingham, and any plans or sketches you can share.",
+        "Use the estimate form on this page or email Imperial Hardwood Floors. Include a short project description, location in Olathe, and any product preferences or photos you can share.",
     },
     {
       question: "What should I prepare before we talk?",
       answer:
-        "Helpful details include project address, whether the work is new construction or renovation, approximate size, and preferred timing. Plans are useful when available, but early conversations can start without a full drawing set.",
+        "Helpful details include project address, rooms involved, approximate square footage, product preferences, and preferred timing. Photos are useful when available, but early conversations can start without a full material selection.",
     },
     {
       question: "How is scheduling handled?",
       answer:
-        "Scheduling depends on project scope, site readiness, and coordination with other trades. Timeline expectations are discussed after the scope is understood—not before.",
+        "Scheduling depends on project scope, site readiness, and material timing. Timeline expectations are discussed after the scope is understood—not before.",
     },
     {
-      question: "Do you serve areas outside Bellingham?",
+      question: "Do you serve areas outside Olathe?",
       answer:
-        "This page is focused on Bellingham, WA. If you are elsewhere, contact us and we can tell you whether the project can be considered or whether a different location page applies.",
+        "This page is focused on Olathe, KS. If you are elsewhere, contact us and we can tell you whether the project can be considered or whether a different location page applies.",
     },
     {
       question: "Will I get a fixed price on first contact?",
       answer:
-        "Estimates are based on discussed scope. Early outreach helps start the conversation; a meaningful estimate follows once the framing work is clearly defined.",
+        "Estimates are based on discussed scope. Early outreach helps start the conversation; a meaningful estimate follows once the installation work is clearly defined.",
     },
   ],
 } as const;
@@ -293,18 +293,18 @@ export const contactContent = {
   eyebrow: "Contact",
   title: "Request an Estimate",
   description:
-    "Tell us about your residential framing project in Bellingham. Michael Joyner will follow up using the contact details you provide.",
+    "Tell us about your hardwood floor installation project in Olathe. Imperial Hardwood Floors will follow up using the contact details you provide.",
   map: {
-    /** Downtown Bellingham, WA */
-    lat: 48.7519,
-    lng: -122.4787,
-    zoomLabel: "Bellingham, WA",
+    /** Downtown Olathe, KS */
+    lat: 38.8814,
+    lng: -94.8191,
+    zoomLabel: "Olathe, KS",
   },
 } as const;
 
 export const heroImages = {
   main: {
-    src: "/images/hero/framing-neighborhood.webp",
-    alt: "Residential wood framing on new home construction sites under a clear sky",
+    src: "/images/hero/floor-hero.jpg",
+    alt: "Hardwood flooring installed in a finished residential bedroom",
   },
 } as const;

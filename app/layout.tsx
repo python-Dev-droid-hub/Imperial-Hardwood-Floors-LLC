@@ -56,7 +56,7 @@ export const metadata: Metadata = {
         url: seo.ogImagePath,
         width: 2400,
         height: 1600,
-        alt: "Residential framing structure for home construction",
+        alt: "Hardwood floor installation for residential homes",
       },
     ],
   },

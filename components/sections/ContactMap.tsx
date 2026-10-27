@@ -3,7 +3,7 @@
 import { MapPin } from "lucide-react";
 import { contactContent } from "@/content/site";
 
-/** OpenStreetMap embed — no API key. Bellingham only (no pin chips). */
+/** OpenStreetMap embed — no API key. Olathe only (no pin chips). */
 export function ContactMap() {
   const { lat, lng, zoomLabel } = contactContent.map;
   const delta = 0.09;
@@ -30,7 +30,7 @@ export function ContactMap() {
 
       <div className="relative min-h-[14rem] flex-1 bg-stone/10">
         <iframe
-          title="Map of residential framing service area in Bellingham, Washington"
+          title="Map of floor installation service area in Olathe, Kansas"
           src={src}
           className="absolute inset-0 h-full w-full border-0"
           loading="lazy"

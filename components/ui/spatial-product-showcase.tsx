@@ -7,7 +7,7 @@ import {
   motion,
   type Variants,
 } from "framer-motion";
-import { ChevronRight, Hammer } from "lucide-react";
+import { ChevronRight, Layers } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { cn } from "@/lib/utils";
 
@@ -187,7 +187,7 @@ export default function SpatialServiceShowcase({
                   className={cn("h-1.5 w-1.5 rounded-full", accent.dot)}
                   aria-hidden="true"
                 />
-                Bellingham, WA
+                Olathe, KS
               </div>
             </div>
           </div>
@@ -231,7 +231,7 @@ export default function SpatialServiceShowcase({
                   className="min-h-11"
                 >
                   <span className="inline-flex items-center gap-2">
-                    <Hammer size={14} aria-hidden="true" />
+                    <Layers size={14} aria-hidden="true" />
                     {current.ctaLabel ?? "Request an Estimate"}
                     <ChevronRight size={14} aria-hidden="true" />
                   </span>
@@ -246,7 +246,7 @@ export default function SpatialServiceShowcase({
         <div
           className="flex max-w-full flex-wrap items-center justify-center gap-1 rounded-full border border-charcoal/10 bg-ivory p-1.5 shadow-[0_14px_40px_-24px_rgba(20,18,16,0.4)]"
           role="tablist"
-          aria-label="Framing services"
+          aria-label="Floor installation services"
         >
           {options.map((opt) => {
             const selected = activeId === opt.id;

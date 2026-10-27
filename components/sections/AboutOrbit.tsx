@@ -2,8 +2,8 @@
 
 import {
   ClipboardList,
-  Hammer,
   Home,
+  Layers,
   Ruler,
   MessagesSquare,
   CheckCircle2,
@@ -18,13 +18,13 @@ const aboutOrbitData: TimelineItem[] = [
     title: "Inquiry",
     date: "Step 01",
     content:
-      "Share your residential framing needs in Bellingham—new home, addition, or renovation.",
+      "Share your floor installation needs in Olathe—new hardwood, replacement, or remodel rooms.",
     category: "Start",
     icon: MessagesSquare,
     relatedIds: [2],
     status: "completed",
     energy: 100,
-    image: "/images/hero/framing-neighborhood.webp",
+    image: "/images/hero/floor-hero.jpg",
     borderClass: "border-copper",
   },
   {
@@ -32,13 +32,13 @@ const aboutOrbitData: TimelineItem[] = [
     title: "Scope",
     date: "Step 02",
     content:
-      "We review plans, access, and structural goals so the framing scope is clear before estimating.",
+      "We review rooms, product preferences, and site conditions so the install scope is clear before estimating.",
     category: "Planning",
     icon: ClipboardList,
     relatedIds: [1, 3],
     status: "completed",
     energy: 90,
-    image: "/images/hero/frame-main.jpg",
+    image: "/images/hero/floor-planks.jpg",
     borderClass: "border-[#c4845a]",
   },
   {
@@ -46,41 +46,41 @@ const aboutOrbitData: TimelineItem[] = [
     title: "Layout",
     date: "Step 03",
     content:
-      "Accurate layout sets walls, floors, and openings so the frame stays square and true.",
+      "Accurate layout sets starting lines, transitions, and cuts so the hardwood stays even and true.",
     category: "Craft",
     icon: Ruler,
     relatedIds: [2, 4],
     status: "in-progress",
     energy: 70,
-    image: "/images/hero/frame-beams.jpg",
+    image: "/images/hero/floor-detail.jpg",
     borderClass: "border-stone",
   },
   {
     id: 4,
-    title: "Framing",
+    title: "Install",
     date: "Step 04",
     content:
-      "Structural framing for residential construction—built with careful connections and clean workmanship.",
+      "Hardwood floor installation with careful fastening, clean cuts, and attention to every doorway.",
     category: "Build",
-    icon: Hammer,
+    icon: Layers,
     relatedIds: [3, 5],
     status: "in-progress",
     energy: 55,
-    image: "/images/hero/framing-crew.webp",
+    image: "/images/hero/floor-install.jpg",
     borderClass: "border-copper-bright",
   },
   {
     id: 5,
-    title: "Structure",
+    title: "Finish",
     date: "Step 05",
     content:
-      "Walls, floors, and roof framing come together as the backbone of the home.",
+      "Rooms, hallways, and transitions come together as a cohesive hardwood floor throughout the home.",
     category: "Build",
     icon: Home,
     relatedIds: [4, 6],
     status: "pending",
     energy: 35,
-    image: "/images/hero/frame-detail.jpg",
+    image: "/images/hero/floor-living.jpg",
     borderClass: "border-[#8a847a]",
   },
   {
@@ -88,13 +88,13 @@ const aboutOrbitData: TimelineItem[] = [
     title: "Handoff",
     date: "Step 06",
     content:
-      "We wrap the framing stage and coordinate follow-up so the next trades can move forward.",
+      "We wrap the install and coordinate follow-up so trim and everyday living can move forward.",
     category: "Finish",
     icon: CheckCircle2,
     relatedIds: [5],
     status: "pending",
     energy: 20,
-    image: "/images/hero/frame-skyline.jpg",
+    image: "/images/hero/floor-room.jpg",
     borderClass: "border-charcoal/40",
   },
 ];
@@ -103,9 +103,9 @@ export function AboutOrbit() {
   return (
     <RadialOrbitalTimeline
       timelineData={aboutOrbitData}
-      centerImage="/images/hero/framing-neighborhood.webp"
-      centerAlt="Residential wood framing homes under construction"
-      centerLabel="Bellingham · Framing"
+      centerImage="/images/hero/floor-detail.jpg"
+      centerAlt="Hardwood flooring detail after professional installation"
+      centerLabel="Olathe · Floors"
       className="bg-ivory py-2 sm:py-4"
     />
   );

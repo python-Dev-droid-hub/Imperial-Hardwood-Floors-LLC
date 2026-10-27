@@ -17,8 +17,8 @@ export type TestimonialsMarqueeProps = {
 };
 
 export default function TestimonialsMarquee({
-  title = "Trusted by homeowners in Bellingham",
-  description = "What clients value when the frame has to be square, solid, and ready for the trades that follow.",
+  title = "Trusted by homeowners in Olathe",
+  description = "What clients value when the floor has to be clean, solid, and ready for everyday living.",
   testimonials,
   className = "",
   id,

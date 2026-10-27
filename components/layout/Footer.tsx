@@ -8,16 +8,16 @@ export function Footer() {
         <div className="sm:col-span-2 lg:col-span-1">
           <Link href="#home" className="inline-block">
             <img
-              src="/logo.png"
+              src="/logo.png?v=2"
               alt={`${site.businessName} logo`}
-              width={160}
-              height={64}
-              className="block h-14 w-auto object-contain object-left invert md:h-16"
+              width={320}
+              height={132}
+              className="block h-14 w-auto max-w-[14rem] object-contain object-left md:h-16 md:max-w-[17rem]"
             />
           </Link>
           <p className="mt-5 max-w-sm text-sm leading-relaxed text-ivory/65">
-            Residential framing for homes and home projects in{" "}
-            {site.locationShort}. Structure first—built with care and clear
+            Floor installation for homes and remodel projects in{" "}
+            {site.locationShort}. Quality floors—installed with care and clear
             communication.
           </p>
         </div>
