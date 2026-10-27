@@ -32,6 +32,30 @@ export function About() {
             {aboutContent.paragraphs.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
+            <p>
+              Explore our{" "}
+              <a
+                href="#services"
+                className="font-semibold text-copper underline decoration-copper/30 underline-offset-2 transition-colors hover:text-copper-bright hover:decoration-copper"
+              >
+                floor installation services
+              </a>{" "}
+              or jump to the{" "}
+              <a
+                href="#service-area"
+                className="font-semibold text-copper underline decoration-copper/30 underline-offset-2 transition-colors hover:text-copper-bright hover:decoration-copper"
+              >
+                Olathe service area
+              </a>{" "}
+              details—then{" "}
+              <a
+                href="#contact"
+                className="font-semibold text-copper underline decoration-copper/30 underline-offset-2 transition-colors hover:text-copper-bright hover:decoration-copper"
+              >
+                request an estimate
+              </a>
+              .
+            </p>
           </div>
           <div className="about-cta mt-8">
             <Button href={aboutContent.cta.href} variant="primaryOnLight">

@@ -1,6 +1,7 @@
 import type { MetadataRoute } from "next";
 import { getSiteUrl } from "@/lib/site-url";
 
+/** Single landing page — hash sections are not separate crawlable URLs. */
 export default function sitemap(): MetadataRoute.Sitemap {
   const siteUrl = getSiteUrl();
   if (!siteUrl) {
@@ -10,6 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     {
       url: siteUrl,
+      lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 1,
     },

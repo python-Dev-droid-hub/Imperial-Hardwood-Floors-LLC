@@ -19,6 +19,11 @@ export const site = {
     "Lenexa, KS",
     "Shawnee, KS",
   ] as const,
+  /**
+   * Public profile URLs for Organization/LocalBusiness sameAs (social schema).
+   * Add Facebook, Instagram, Google Business, Yelp, etc. when available.
+   */
+  socialProfiles: [] as readonly string[],
   /** Static for Cache Components / prerender — update yearly. */
   copyrightYear: 2026,
 } as const;
@@ -35,7 +40,9 @@ export const footerLinks = [
   { label: "Home", href: "#home" },
   { label: "About Us", href: "#about" },
   { label: "Services", href: "#services" },
+  { label: "Service Area", href: "#service-area" },
   { label: "Reviews", href: "#reviews" },
+  { label: "FAQs", href: "#faqs" },
   { label: "Contact Us", href: "#contact" },
 ] as const;
 

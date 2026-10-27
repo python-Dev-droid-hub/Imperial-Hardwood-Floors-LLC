@@ -1,7 +1,7 @@
-import { buildLocalBusinessJsonLd } from "@/lib/seo";
+import { buildJsonLdGraph } from "@/lib/seo";
 
 export function JsonLd() {
-  const data = buildLocalBusinessJsonLd();
+  const data = buildJsonLdGraph();
 
   return (
     <script

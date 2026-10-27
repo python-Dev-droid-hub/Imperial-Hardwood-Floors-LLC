@@ -56,7 +56,7 @@ export const metadata: Metadata = {
         url: seo.ogImagePath,
         width: 2400,
         height: 1600,
-        alt: "Hardwood floor installation for residential homes",
+        alt: "Hardwood floor installation for residential homes in Olathe, KS",
       },
     ],
   },
@@ -65,6 +65,13 @@ export const metadata: Metadata = {
     title: seo.title,
     description: seo.description,
     images: [seo.ogImagePath],
+  },
+  other: {
+    "og:phone_number": site.phone,
+    "og:email": site.email,
+    "og:locality": "Olathe",
+    "og:region": "KS",
+    "og:country-name": "USA",
   },
   // Avoid inventing icons beyond the logo we have
   icons: {
