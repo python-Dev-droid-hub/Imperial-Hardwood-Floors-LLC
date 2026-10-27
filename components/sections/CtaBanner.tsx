@@ -5,7 +5,7 @@ import { site } from "@/content/site";
 
 export function CtaBanner() {
   return (
-    <div id="get-started" className="scroll-mt-24 bg-ivory px-5 py-16 md:px-8 md:py-24">
+    <div id="get-started" className="scroll-mt-24 bg-ivory px-5 py-10 md:px-8 md:py-14">
       <FinalCtaBanner
         eyebrow="Ready to build"
         heading={`Let's frame your next residential project in ${site.locationShort}.`}

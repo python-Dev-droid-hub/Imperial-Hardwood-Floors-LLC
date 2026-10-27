@@ -14,7 +14,7 @@ export function About() {
     <section
       id="about"
       ref={ref}
-      className="scroll-mt-24 border-t border-charcoal/10 bg-ivory px-5 py-24 text-charcoal md:px-8 md:py-32"
+      className="scroll-mt-24 border-t border-charcoal/10 bg-ivory px-5 py-14 text-charcoal md:px-8 md:py-20"
       aria-labelledby="about-heading"
     >
       <div className="about-inner mx-auto grid w-full max-w-7xl items-center gap-10 lg:grid-cols-2 lg:gap-16">

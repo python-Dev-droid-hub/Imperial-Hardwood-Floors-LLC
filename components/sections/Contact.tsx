@@ -35,7 +35,7 @@ export function Contact() {
     <section
       id="contact"
       ref={ref}
-      className="scroll-mt-24 border-t border-charcoal/10 bg-ivory px-5 py-24 text-charcoal md:px-8 md:py-32"
+      className="scroll-mt-24 border-t border-charcoal/10 bg-ivory px-5 py-14 text-charcoal md:px-8 md:py-20"
       aria-labelledby="contact-heading"
     >
       <div className="mx-auto max-w-7xl">
@@ -54,7 +54,7 @@ export function Contact() {
           </p>
         </div>
 
-        <div className="mt-12 grid gap-5 lg:grid-cols-12 lg:items-stretch lg:gap-6">
+        <div className="mt-8 grid gap-5 lg:grid-cols-12 lg:items-stretch lg:gap-6">
           <div className="flex flex-col gap-5 lg:col-span-5">
             <aside
               data-reveal

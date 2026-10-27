@@ -49,7 +49,7 @@ export function Faq() {
         </aside>
 
         {/* Right: FAQ content scrolls with the page */}
-        <div className="flex flex-col justify-center px-5 py-16 md:px-10 md:py-20 lg:px-12 lg:py-24 xl:px-14">
+        <div className="flex flex-col justify-center px-5 py-12 md:px-10 md:py-14 lg:px-12 lg:py-16 xl:px-14">
           <div className="mx-auto w-full max-w-xl">
             <p className="mb-3 text-[0.68rem] font-semibold uppercase tracking-[0.28em] text-copper">
               {faqContent.eyebrow}

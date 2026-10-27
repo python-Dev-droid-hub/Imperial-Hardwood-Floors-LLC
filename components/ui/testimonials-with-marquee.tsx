@@ -32,7 +32,7 @@ export default function TestimonialsMarquee({
       aria-labelledby="testimonials-heading"
     >
       <div className="relative z-10 flex w-full flex-col items-center">
-        <div className="flex flex-col items-center gap-4 px-5 py-12 text-center md:px-8 md:py-16">
+        <div className="flex flex-col items-center gap-4 px-5 py-8 text-center md:px-8 md:py-10">
           <h2
             id="testimonials-heading"
             className="max-w-4xl font-display text-4xl font-semibold tracking-tight text-foreground md:text-6xl"
@@ -71,7 +71,7 @@ export default function TestimonialsMarquee({
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6, delay: 0.65 }}
-          className="w-full pb-14 md:pb-20"
+          className="w-full pb-8 md:pb-12"
         >
           <AnimatedTestimonials data={testimonials} rows={2} />
         </motion.div>

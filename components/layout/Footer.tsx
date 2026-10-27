@@ -4,7 +4,7 @@ import { footerLinks, site } from "@/content/site";
 export function Footer() {
   return (
     <footer className="border-t border-ivory/10 bg-charcoal text-ivory">
-      <div className="mx-auto grid max-w-7xl gap-12 px-5 py-16 sm:grid-cols-2 lg:grid-cols-[1.35fr_0.85fr_0.85fr_0.95fr] md:px-8 md:py-20">
+      <div className="mx-auto grid max-w-7xl gap-10 px-5 py-12 sm:grid-cols-2 lg:grid-cols-[1.35fr_0.85fr_0.85fr_0.95fr] md:px-8 md:py-14">
         <div className="sm:col-span-2 lg:col-span-1">
           <Link href="#home" className="inline-block">
             <img

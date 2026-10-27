@@ -54,7 +54,7 @@ export function Services() {
     <section
       id="services"
       ref={ref}
-      className="scroll-mt-24 border-t border-charcoal/10 bg-ivory px-5 py-24 text-charcoal md:px-8 md:py-32"
+      className="scroll-mt-24 border-t border-charcoal/10 bg-ivory px-5 py-14 text-charcoal md:px-8 md:py-20"
       aria-labelledby="services-heading"
     >
       <div className="mx-auto max-w-7xl">
@@ -67,7 +67,7 @@ export function Services() {
           </h2>
         </div>
 
-        <div className="mt-12" data-reveal>
+        <div className="mt-8" data-reveal>
           <SpatialServiceShowcase items={showcaseItems} autoPlayMs={5000} />
         </div>
       </div>

@@ -28,7 +28,7 @@ export function ServiceArea() {
 
       <div className="lg:grid lg:grid-cols-2 lg:items-stretch">
         {/* Left: long-form content scrolls with the page */}
-        <div className="px-5 py-16 md:px-10 md:py-24 lg:px-12 lg:py-28 xl:px-16">
+        <div className="px-5 py-12 md:px-10 md:py-16 lg:px-12 lg:py-20 xl:px-16">
           <div className="mx-auto max-w-xl xl:max-w-2xl">
             <p className="text-[0.68rem] font-semibold uppercase tracking-[0.28em] text-copper">
               {serviceAreaContent.eyebrow}
@@ -43,7 +43,7 @@ export function ServiceArea() {
               {serviceAreaContent.intro}
             </p>
 
-            <div className="mt-14 space-y-14">
+            <div className="mt-10 space-y-10">
               {serviceAreaContent.sections.map((section) => (
                 <article key={section.heading} className="space-y-5">
                   <h3 className="font-display text-2xl font-semibold tracking-tight text-charcoal md:text-[1.65rem]">

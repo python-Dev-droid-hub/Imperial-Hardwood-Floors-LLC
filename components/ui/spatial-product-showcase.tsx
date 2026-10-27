@@ -142,7 +142,7 @@ export default function SpatialServiceShowcase({
         transition={{ duration: 0.65, ease: [0.16, 1, 0.3, 1] }}
       />
 
-      <div className="relative z-10 mx-auto grid w-full max-w-6xl items-center gap-12 px-1 py-8 md:grid-cols-2 md:gap-16 md:py-12 lg:gap-20">
+      <div className="relative z-10 mx-auto grid w-full max-w-6xl items-center gap-10 px-1 py-4 md:grid-cols-2 md:gap-12 md:py-6 lg:gap-16">
         <div className="relative mx-auto flex w-full max-w-[28rem] items-center justify-center md:mx-0">
           <div className="relative aspect-square w-full max-w-[26rem]">
             <div
@@ -242,7 +242,7 @@ export default function SpatialServiceShowcase({
         </div>
       </div>
 
-      <div className="relative z-20 flex justify-center px-4 pb-8 pt-2">
+      <div className="relative z-20 flex justify-center px-4 pb-4 pt-1">
         <div
           className="flex max-w-full flex-wrap items-center justify-center gap-1 rounded-full border border-charcoal/10 bg-ivory p-1.5 shadow-[0_14px_40px_-24px_rgba(20,18,16,0.4)]"
           role="tablist"
