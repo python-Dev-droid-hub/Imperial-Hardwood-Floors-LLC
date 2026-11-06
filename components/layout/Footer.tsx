@@ -1,12 +1,13 @@
 import Link from "next/link";
+import { services } from "@/content/services";
 import { footerLinks, site } from "@/content/site";
 
 export function Footer() {
   return (
     <footer className="border-t border-ivory/10 bg-charcoal text-ivory">
-      <div className="mx-auto grid max-w-7xl gap-10 px-5 py-12 sm:grid-cols-2 lg:grid-cols-[1.35fr_0.85fr_0.85fr_0.95fr] md:px-8 md:py-14">
+      <div className="mx-auto grid max-w-7xl gap-10 px-5 py-12 sm:grid-cols-2 lg:grid-cols-[1.35fr_0.85fr_0.95fr_0.95fr] md:px-8 md:py-14">
         <div className="sm:col-span-2 lg:col-span-1">
-          <Link href="#home" className="inline-block">
+          <Link href="/" className="inline-block">
             <img
               src="/logo.png?v=2"
               alt={`${site.businessName} logo`}
@@ -16,9 +17,8 @@ export function Footer() {
             />
           </Link>
           <p className="mt-5 max-w-sm text-sm leading-relaxed text-ivory/65">
-            Floor installation for homes and remodel projects in{" "}
-            {site.locationShort}. Quality floors—installed with care and clear
-            communication.
+            Flooring services for homes in {site.locationShort}. Quality
+            work—installed with care and clear communication.
           </p>
         </div>
 
@@ -42,16 +42,16 @@ export function Footer() {
 
         <div>
           <p className="text-[0.72rem] font-bold uppercase tracking-[0.22em] text-ivory">
-            Serving areas
+            Services
           </p>
           <ul className="mt-4 space-y-2">
-            {site.servingAreas.map((area) => (
-              <li key={area}>
+            {services.map((service) => (
+              <li key={service.slug}>
                 <Link
-                  href="#service-area"
+                  href={`/${service.path}`}
                   className="text-sm text-ivory/75 transition-colors hover:text-ivory"
                 >
-                  {area}
+                  {service.name}
                 </Link>
               </li>
             ))}

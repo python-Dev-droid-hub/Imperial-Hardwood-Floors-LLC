@@ -3,18 +3,43 @@ import { HeroAtmosphere } from "@/components/hero/HeroAtmosphere";
 import { Button } from "@/components/ui/Button";
 import { heroContent, heroImages } from "@/content/site";
 
+export type HeroProps = {
+  /** Override the full-bleed banner image. Defaults to the homepage hero. */
+  image?: {
+    src: string;
+    alt: string;
+  };
+  eyebrow?: string;
+  headline?: string;
+  brandLine?: string;
+  supporting?: string;
+  primaryCta?: { label: string; href: string };
+  secondaryCta?: { label: string; href: string };
+  /** Accessible name for the hero region. */
+  ariaLabel?: string;
+};
+
 /** Static full-viewport hero — single image, no scroll motion. */
-export function Hero() {
+export function Hero({
+  image = heroImages.main,
+  eyebrow = heroContent.eyebrow,
+  headline = heroContent.headline,
+  brandLine = heroContent.brandLine,
+  supporting = heroContent.supporting,
+  primaryCta = heroContent.primaryCta,
+  secondaryCta = heroContent.secondaryCta,
+  ariaLabel = "Floor installation in Olathe",
+}: HeroProps = {}) {
   return (
     <section
       id="home"
       className="hero-root relative h-[100svh] min-h-[36rem] overflow-hidden bg-charcoal text-ivory"
-      aria-label="Floor installation in Olathe"
+      aria-label={ariaLabel}
     >
       <div className="absolute inset-0">
         <Image
-          src={heroImages.main.src}
-          alt={heroImages.main.alt}
+          src={image.src}
+          alt={image.alt}
           fill
           priority
           sizes="100vw"
@@ -28,27 +53,27 @@ export function Hero() {
       <div className="relative z-10 flex h-full items-end md:items-center">
         <div className="mx-auto w-full max-w-7xl px-5 pb-16 pt-36 drop-shadow-[0_2px_24px_rgba(20,18,16,0.45)] md:px-8 md:pb-24 md:pt-44">
           <p className="mb-5 mt-2 text-[0.68rem] font-semibold uppercase tracking-[0.32em] text-copper-bright md:mb-6 md:mt-4">
-            {heroContent.eyebrow}
+            {eyebrow}
           </p>
 
           <h1 className="max-w-3xl font-display text-[clamp(2.35rem,6.5vw,4.75rem)] font-semibold leading-[0.98] tracking-[-0.02em] text-ivory">
-            {heroContent.headline}
+            {headline}
           </h1>
 
           <p className="mt-4 max-w-2xl font-display text-[clamp(1.35rem,3.2vw,2.15rem)] font-semibold leading-tight tracking-[-0.01em] text-ivory/88 md:mt-5">
-            {heroContent.brandLine}
+            {brandLine}
           </p>
 
           <p className="mt-6 max-w-xl text-base leading-relaxed text-ivory/78 md:mt-8 md:text-lg">
-            {heroContent.supporting}
+            {supporting}
           </p>
 
           <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center md:mt-10">
-            <Button href={heroContent.primaryCta.href} variant="primary">
-              {heroContent.primaryCta.label}
+            <Button href={primaryCta.href} variant="primary">
+              {primaryCta.label}
             </Button>
-            <Button href={heroContent.secondaryCta.href} variant="secondary">
-              {heroContent.secondaryCta.label}
+            <Button href={secondaryCta.href} variant="secondary">
+              {secondaryCta.label}
             </Button>
           </div>
         </div>

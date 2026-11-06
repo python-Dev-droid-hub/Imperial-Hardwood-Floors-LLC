@@ -18,6 +18,64 @@
   animation: testimonials-marquee var(--duration, 56s) linear infinite reverse;
 }
 
+/* Soft attention pulse for Serving Area nav CTA */
+@keyframes nav-attract-glow {
+  0%,
+  100% {
+    box-shadow: 0 0 0 0 color-mix(in srgb, var(--copper) 0%, transparent);
+    background-color: color-mix(in srgb, var(--copper) 18%, transparent);
+  }
+  50% {
+    box-shadow: 0 0 0 6px color-mix(in srgb, var(--copper) 0%, transparent),
+      0 0 18px color-mix(in srgb, var(--copper-bright) 35%, transparent);
+    background-color: color-mix(in srgb, var(--copper) 32%, transparent);
+  }
+}
+
+.nav-attract {
+  position: relative;
+  overflow: hidden;
+  border: 1px solid color-mix(in srgb, var(--copper) 55%, transparent);
+  border-radius: 9999px;
+  padding: 0.45rem 0.9rem;
+  color: var(--ivory) !important;
+  background-color: color-mix(in srgb, var(--copper) 22%, transparent);
+  animation: nav-attract-glow 2.6s ease-in-out infinite;
+}
+
+.nav-attract::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    transparent 35%,
+    color-mix(in srgb, var(--ivory) 28%, transparent) 50%,
+    transparent 65%
+  );
+  transform: translateX(-120%);
+  animation: nav-attract-sweep 3.4s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes nav-attract-sweep {
+  0%,
+  55% {
+    transform: translateX(-120%);
+  }
+  75%,
+  100% {
+    transform: translateX(120%);
+  }
+}
+
+.nav-attract-mobile {
+  border: 1px solid color-mix(in srgb, var(--copper) 50%, transparent);
+  border-radius: 0.35rem;
+  background-color: color-mix(in srgb, var(--copper) 18%, transparent);
+  animation: nav-attract-glow 2.6s ease-in-out infinite;
+}
+
 :root {
   --charcoal: #141210;
   --ivory: #f3ede3;
@@ -84,7 +142,10 @@ html {
   }
 
   .animate-testimonials-marquee,
-  .animate-testimonials-marquee-reverse {
+  .animate-testimonials-marquee-reverse,
+  .nav-attract,
+  .nav-attract-mobile,
+  .nav-attract::after {
     animation: none !important;
   }
 }

@@ -6,8 +6,9 @@ import SpatialServiceShowcase, {
 } from "@/components/ui/spatial-product-showcase";
 import { servicesContent } from "@/content/site";
 import { useReveal } from "@/hooks/useReveal";
+import type { MediaImage } from "@/lib/service-images";
 
-const showcaseItems: ServiceShowcaseItem[] = [
+const defaultShowcaseItems: ServiceShowcaseItem[] = [
   {
     id: "new-install",
     label: "New Install",
@@ -46,9 +47,25 @@ const showcaseItems: ServiceShowcaseItem[] = [
   },
 ];
 
-export function Services() {
+type ServicesProps = {
+  serviceImages?: MediaImage[];
+};
+
+export function Services({ serviceImages }: ServicesProps = {}) {
   const ref = useRef<HTMLElement>(null);
   useReveal({ scope: ref, stagger: 0.08, id: "reveal-services" });
+
+  const showcaseItems =
+    serviceImages && serviceImages.length > 0
+      ? defaultShowcaseItems.map((item, index) => {
+          const photo = serviceImages[index % serviceImages.length];
+          return {
+            ...item,
+            image: photo.src,
+            imageAlt: photo.alt,
+          };
+        })
+      : defaultShowcaseItems;
 
   return (
     <section

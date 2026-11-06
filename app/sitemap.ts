@@ -1,19 +1,40 @@
 import type { MetadataRoute } from "next";
+import { getAllServicePaths } from "@/content/services";
 import { getSiteUrl } from "@/lib/site-url";
 
-/** Single landing page — hash sections are not separate crawlable URLs. */
 export default function sitemap(): MetadataRoute.Sitemap {
   const siteUrl = getSiteUrl();
   if (!siteUrl) {
     return [];
   }
 
+  const lastModified = new Date();
+  const serviceEntries = getAllServicePaths().map((path) => ({
+    url: `${siteUrl}/${path}`,
+    lastModified,
+    changeFrequency: "monthly" as const,
+    priority: 0.85,
+  }));
+
   return [
     {
       url: siteUrl,
-      lastModified: new Date(),
+      lastModified,
       changeFrequency: "monthly",
       priority: 1,
     },
+    {
+      url: `${siteUrl}/services`,
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    {
+      url: `${siteUrl}/serving-area`,
+      lastModified,
+      changeFrequency: "monthly",
+      priority: 0.9,
+    },
+    ...serviceEntries,
   ];
 }

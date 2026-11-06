@@ -11,8 +11,9 @@ import {
 import RadialOrbitalTimeline, {
   type TimelineItem,
 } from "@/components/ui/radial-orbital-timeline";
+import type { MediaImage } from "@/lib/service-images";
 
-const aboutOrbitData: TimelineItem[] = [
+const defaultOrbitData: TimelineItem[] = [
   {
     id: 1,
     title: "Inquiry",
@@ -99,12 +100,29 @@ const aboutOrbitData: TimelineItem[] = [
   },
 ];
 
-export function AboutOrbit() {
+type AboutOrbitProps = {
+  serviceImages?: MediaImage[];
+};
+
+export function AboutOrbit({ serviceImages }: AboutOrbitProps = {}) {
+  const timelineData =
+    serviceImages && serviceImages.length > 0
+      ? defaultOrbitData.map((item, index) => {
+          const photo = serviceImages[index % serviceImages.length];
+          return { ...item, image: photo.src };
+        })
+      : defaultOrbitData;
+
+  const center = serviceImages?.[0] ?? {
+    src: "/images/hero/floor-detail.jpg",
+    alt: "Hardwood flooring detail after professional installation",
+  };
+
   return (
     <RadialOrbitalTimeline
-      timelineData={aboutOrbitData}
-      centerImage="/images/hero/floor-detail.jpg"
-      centerAlt="Hardwood flooring detail after professional installation"
+      timelineData={timelineData}
+      centerImage={center.src}
+      centerAlt={center.alt}
       centerLabel="Olathe · Floors"
       className="bg-ivory py-2 sm:py-4"
     />

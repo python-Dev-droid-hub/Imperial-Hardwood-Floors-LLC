@@ -5,8 +5,13 @@ import { AboutOrbit } from "@/components/sections/AboutOrbit";
 import { Button } from "@/components/ui/Button";
 import { aboutContent } from "@/content/site";
 import { useReveal } from "@/hooks/useReveal";
+import type { MediaImage } from "@/lib/service-images";
 
-export function About() {
+type AboutProps = {
+  serviceImages?: MediaImage[];
+};
+
+export function About({ serviceImages }: AboutProps = {}) {
   const ref = useRef<HTMLElement>(null);
   useReveal({ scope: ref, stagger: 0.1, id: "reveal-about" });
 
@@ -35,21 +40,21 @@ export function About() {
             <p>
               Explore our{" "}
               <a
-                href="#services"
+                href="/services"
                 className="font-semibold text-copper underline decoration-copper/30 underline-offset-2 transition-colors hover:text-copper-bright hover:decoration-copper"
               >
-                floor installation services
+                flooring services
               </a>{" "}
               or jump to the{" "}
               <a
-                href="#service-area"
+                href="/serving-area"
                 className="font-semibold text-copper underline decoration-copper/30 underline-offset-2 transition-colors hover:text-copper-bright hover:decoration-copper"
               >
                 Olathe service area
               </a>{" "}
               details—then{" "}
               <a
-                href="#contact"
+                href="/#contact"
                 className="font-semibold text-copper underline decoration-copper/30 underline-offset-2 transition-colors hover:text-copper-bright hover:decoration-copper"
               >
                 request an estimate
@@ -65,7 +70,7 @@ export function About() {
         </div>
 
         <div className="about-visual w-full overflow-visible" data-reveal>
-          <AboutOrbit />
+          <AboutOrbit serviceImages={serviceImages} />
           <p className="mt-2 text-center text-xs text-stone">
             Tap a node to explore each stage of floor installation.
           </p>

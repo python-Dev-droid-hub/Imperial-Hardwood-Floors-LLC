@@ -11,6 +11,8 @@ export function Header() {
   const menuId = useId();
   const menuButtonRef = useRef<HTMLButtonElement>(null);
   const firstLinkRef = useRef<HTMLAnchorElement>(null);
+  // Full-bleed hero on every marketing page — keep nav clear until scroll.
+  const solid = scrolled || open;
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 24);
@@ -47,14 +49,14 @@ export function Header() {
   return (
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-[background-color,box-shadow,backdrop-filter] duration-500 ${
-        scrolled || open
+        solid
           ? "bg-charcoal/95 shadow-[0_1px_0_rgba(243,237,227,0.08)] backdrop-blur-md"
           : "bg-transparent"
       }`}
     >
       <div className="mx-auto flex h-[5rem] max-w-7xl items-center justify-between gap-4 px-5 md:h-[5.5rem] md:px-8">
         <Link
-          href="#home"
+          href="/"
           className="relative z-10 flex shrink-0 items-center text-ivory focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-copper"
           onClick={closeMenu}
         >
@@ -68,22 +70,29 @@ export function Header() {
         </Link>
 
         <nav
-          className="hidden items-center gap-8 lg:flex"
+          className="hidden items-center gap-6 xl:gap-8 lg:flex"
           aria-label="Primary"
         >
-          {navLinks.map((link) => (
-            <Link
-              key={link.href}
-              href={link.href}
-              className="text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-ivory/80 transition-colors hover:text-ivory focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-copper"
-            >
-              {link.label}
-            </Link>
-          ))}
+          {navLinks.map((link) => {
+            const attract = "attract" in link && link.attract;
+            return (
+              <Link
+                key={link.href}
+                href={link.href}
+                className={
+                  attract
+                    ? "nav-attract text-[0.7rem] font-semibold uppercase tracking-[0.2em] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-copper"
+                    : "text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-ivory/80 transition-colors hover:text-ivory focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-copper"
+                }
+              >
+                {link.label}
+              </Link>
+            );
+          })}
         </nav>
 
         <div className="hidden lg:block">
-          <Button href="#contact" variant="primary" className="min-h-10 px-5">
+          <Button href="/#contact" variant="primary" className="min-h-10 px-5">
             Request an Estimate
           </Button>
         </div>
@@ -128,20 +137,27 @@ export function Header() {
           className="mx-auto flex max-w-7xl flex-col gap-1 px-5 py-6"
           aria-label="Mobile"
         >
-          {navLinks.map((link, index) => (
-            <Link
-              key={link.href}
-              ref={index === 0 ? firstLinkRef : undefined}
-              href={link.href}
-              onClick={closeMenu}
-              className="px-2 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-ivory/90 transition-colors hover:text-ivory focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-copper"
-            >
-              {link.label}
-            </Link>
-          ))}
+          {navLinks.map((link, index) => {
+            const attract = "attract" in link && link.attract;
+            return (
+              <Link
+                key={link.href}
+                ref={index === 0 ? firstLinkRef : undefined}
+                href={link.href}
+                onClick={closeMenu}
+                className={
+                  attract
+                    ? "nav-attract-mobile px-3 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-ivory focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-copper"
+                    : "px-2 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-ivory/90 transition-colors hover:text-ivory focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-copper"
+                }
+              >
+                {link.label}
+              </Link>
+            );
+          })}
           <div className="mt-4 px-2">
             <Button
-              href="#contact"
+              href="/#contact"
               variant="primary"
               className="w-full"
               onClick={closeMenu}

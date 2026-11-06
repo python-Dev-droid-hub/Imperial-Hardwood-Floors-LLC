@@ -12,13 +12,8 @@ export const site = {
   service: "Floor installation",
   location: "Olathe, Kansas",
   locationShort: "Olathe, KS",
-  /** Areas named in the footer. Primary focus of this page remains Olathe. */
-  servingAreas: [
-    "Olathe, KS",
-    "Overland Park, KS",
-    "Lenexa, KS",
-    "Shawnee, KS",
-  ] as const,
+  /** Single focus market for this site. */
+  servingAreas: ["Olathe, KS"] as const,
   /**
    * Public profile URLs for Organization/LocalBusiness sameAs (social schema).
    * Add Facebook, Instagram, Google Business, Yelp, etc. when available.
@@ -29,21 +24,26 @@ export const site = {
 } as const;
 
 export const navLinks = [
-  { label: "Home", href: "#home" },
-  { label: "About Us", href: "#about" },
-  { label: "Services", href: "#services" },
-  { label: "Reviews", href: "#reviews" },
-  { label: "Contact Us", href: "#contact" },
+  { label: "Home", href: "/" },
+  { label: "About Us", href: "/#about" },
+  { label: "Services", href: "/services" },
+  { label: "Reviews", href: "/#reviews" },
+  { label: "Contact Us", href: "/#contact" },
+  {
+    label: "Serving Areas",
+    href: "/serving-area",
+    attract: true,
+  },
 ] as const;
 
 export const footerLinks = [
-  { label: "Home", href: "#home" },
-  { label: "About Us", href: "#about" },
-  { label: "Services", href: "#services" },
-  { label: "Service Area", href: "#service-area" },
-  { label: "Reviews", href: "#reviews" },
-  { label: "FAQs", href: "#faqs" },
-  { label: "Contact Us", href: "#contact" },
+  { label: "Home", href: "/" },
+  { label: "About Us", href: "/#about" },
+  { label: "Services", href: "/services" },
+  { label: "Serving Areas", href: "/serving-area" },
+  { label: "Reviews", href: "/#reviews" },
+  { label: "FAQs", href: "/#faqs" },
+  { label: "Contact Us", href: "/#contact" },
 ] as const;
 
 export const heroContent = {
@@ -53,8 +53,8 @@ export const heroContent = {
   brandLine: "Hardwood Floors, Installed Right.",
   supporting:
     "Professional hardwood floor installation for homes across Olathe and nearby Johnson County. Request a clear estimate from Imperial Hardwood Floors LLC.",
-  primaryCta: { label: "Request an Estimate", href: "#contact" },
-  secondaryCta: { label: "About Us", href: "#about" },
+  primaryCta: { label: "Request an Estimate", href: "/#contact" },
+  secondaryCta: { label: "About Us", href: "/#about" },
 } as const;
 
 export const aboutContent = {
@@ -64,7 +64,7 @@ export const aboutContent = {
     "A great hardwood floor starts with careful install work—accurate layout, clean cuts, proper fastening, and transitions that look intentional from room to room.",
     "Imperial Hardwood Floors LLC installs hardwood floors for homeowners in Olathe, Kansas. We keep the process practical: scope the rooms, confirm the product and prep, then install with clean workmanship and clear communication.",
   ],
-  cta: { label: "Request an Estimate", href: "#contact" },
+  cta: { label: "Request an Estimate", href: "/#contact" },
   image: {
     src: "/images/hero/floor-detail.jpg",
     alt: "Wide-plank hardwood flooring installed through a residential hallway",
@@ -170,8 +170,8 @@ export const serviceAreaContent = {
       ],
     },
   ],
-  note: "Other nearby communities may be covered on separate location pages when those pages are published.",
-  cta: { label: "Request an Estimate", href: "#contact" },
+  note: "This site is focused on Olathe, KS only.",
+  cta: { label: "Request an Estimate", href: "/#contact" },
   image: {
     src: "/images/service-area/olathe-landmark.png",
     alt: "Clock tower and plaza landmark in Olathe, Kansas",
@@ -183,7 +183,7 @@ export const reviewsContent = {
   eyebrow: "Customer Reviews",
   title: "Trusted for floor installation in Olathe",
   body: "Sample homeowner feedback for layout. Replace these with verified Imperial Hardwood Floors LLC reviews when you have them—no invented star ratings.",
-  cta: { label: "Talk About Your Project", href: "#contact" },
+  cta: { label: "Talk About Your Project", href: "/#contact" },
   testimonials: [
     {
       name: "Elena Brooks",

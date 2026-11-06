@@ -180,7 +180,7 @@ export function buildJsonLdGraph() {
       "Hardwood floor installation for new homes, replacements, and remodel projects in Olathe, Kansas and nearby communities.",
     provider: { "@id": localId },
     areaServed,
-    url: pageUrl ? `${pageUrl}/#services` : undefined,
+    url: pageUrl ? `${pageUrl}/services` : undefined,
   };
 
   const faqPage: Record<string, unknown> = {

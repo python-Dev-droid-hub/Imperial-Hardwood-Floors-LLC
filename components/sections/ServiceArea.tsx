@@ -3,8 +3,19 @@
 import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 import { serviceAreaContent } from "@/content/site";
+import type { MediaImage } from "@/lib/service-images";
 
-export function ServiceArea() {
+type ServiceAreaProps = {
+  sideImage?: MediaImage;
+};
+
+export function ServiceArea({ sideImage }: ServiceAreaProps = {}) {
+  const image = {
+    src: sideImage?.src ?? serviceAreaContent.image.src,
+    alt: sideImage?.alt ?? serviceAreaContent.image.alt,
+    caption: serviceAreaContent.image.caption,
+  };
+
   return (
     <section
       id="service-area"
@@ -14,15 +25,15 @@ export function ServiceArea() {
       {/* Mobile landmark — stacked above content */}
       <div className="relative h-[52vh] min-h-[18rem] overflow-hidden lg:hidden">
         <Image
-          src={serviceAreaContent.image.src}
-          alt={serviceAreaContent.image.alt}
+          src={image.src}
+          alt={image.alt}
           fill
           sizes="100vw"
           className="object-cover object-center"
           priority={false}
         />
         <p className="absolute bottom-5 left-5 rounded-full border border-charcoal/10 bg-ivory/90 px-4 py-2 font-display text-xs font-semibold uppercase tracking-[0.24em] text-charcoal shadow-sm backdrop-blur-sm">
-          {serviceAreaContent.image.caption}
+          {image.caption}
         </p>
       </div>
 
@@ -78,12 +89,22 @@ export function ServiceArea() {
             </div>
 
             <p className="mt-12 text-sm leading-relaxed text-stone">
-              {serviceAreaContent.note}
+              {serviceAreaContent.note}{" "}
+              <a
+                href="/serving-area"
+                className="font-semibold text-copper underline decoration-copper/30 underline-offset-2 transition-colors hover:text-copper-bright"
+              >
+                Open the full serving area page
+              </a>
+              .
             </p>
 
-            <div className="mt-10">
+            <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
               <Button href={serviceAreaContent.cta.href} variant="primaryOnLight">
                 {serviceAreaContent.cta.label}
+              </Button>
+              <Button href="/serving-area" variant="secondaryOnLight">
+                Serving Area Details
               </Button>
             </div>
           </div>
@@ -93,8 +114,8 @@ export function ServiceArea() {
         <aside className="relative hidden min-h-full lg:block">
           <div className="sticky top-0 h-svh w-full overflow-hidden">
             <Image
-              src={serviceAreaContent.image.src}
-              alt={serviceAreaContent.image.alt}
+              src={image.src}
+              alt={image.alt}
               fill
               sizes="50vw"
               className="object-cover object-[center_35%]"
@@ -102,7 +123,7 @@ export function ServiceArea() {
             />
             <div className="absolute inset-x-0 bottom-0 p-8 xl:p-10">
               <p className="inline-flex rounded-full border border-charcoal/10 bg-ivory/90 px-4 py-2.5 font-display text-sm font-semibold uppercase tracking-[0.26em] text-charcoal shadow-sm backdrop-blur-sm">
-                {serviceAreaContent.image.caption}
+                {image.caption}
               </p>
             </div>
           </div>
