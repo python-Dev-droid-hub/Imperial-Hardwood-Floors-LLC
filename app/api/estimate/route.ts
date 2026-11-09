@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import nodemailer from "nodemailer";
 import { site } from "@/content/site";
+import { getClientIp, rateLimit } from "@/lib/rate-limit";
 
 type EstimatePayload = {
   name?: string;
@@ -8,10 +9,28 @@ type EstimatePayload = {
   phone?: string;
   projectDetails?: string;
   consent?: boolean | string;
+  /** Honeypot — must stay empty. */
+  website?: string;
 };
 
+const LIMITS = {
+  name: 100,
+  email: 254,
+  phone: 40,
+  projectDetails: 5000,
+} as const;
+
 function isEmail(value: string) {
-  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value);
+  return (
+    value.length <= LIMITS.email &&
+    /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value) &&
+    !/[\r\n]/.test(value)
+  );
+}
+
+/** Strip CR/LF to prevent header injection. */
+function sanitizeHeader(value: string) {
+  return value.replace(/[\r\n\0]/g, "").trim();
 }
 
 function escapeHtml(value: string) {
@@ -23,9 +42,31 @@ function escapeHtml(value: string) {
 }
 
 export async function POST(request: Request) {
+  const ip = getClientIp(request);
+  const limited = rateLimit(`estimate:${ip}`);
+  if (!limited.ok) {
+    return NextResponse.json(
+      {
+        ok: false,
+        error: "Too many requests. Please try again in a few minutes.",
+      },
+      {
+        status: 429,
+        headers: { "Retry-After": String(limited.retryAfterSec) },
+      },
+    );
+  }
+
   let body: EstimatePayload;
 
   try {
+    const contentLength = Number(request.headers.get("content-length") || "0");
+    if (contentLength > 20_000) {
+      return NextResponse.json(
+        { ok: false, error: "Request too large." },
+        { status: 413 },
+      );
+    }
     body = (await request.json()) as EstimatePayload;
   } catch {
     return NextResponse.json(
@@ -34,10 +75,24 @@ export async function POST(request: Request) {
     );
   }
 
-  const name = String(body.name ?? "").trim();
-  const email = String(body.email ?? "").trim();
-  const phone = String(body.phone ?? "").trim();
-  const projectDetails = String(body.projectDetails ?? "").trim();
+  // Silent reject for bots that fill hidden fields.
+  if (String(body.website ?? "").trim()) {
+    return NextResponse.json({
+      ok: true,
+      mode: "live",
+      message: "Thank you. Your estimate request has been sent.",
+    });
+  }
+
+  const name = sanitizeHeader(String(body.name ?? "")).slice(0, LIMITS.name);
+  const email = sanitizeHeader(String(body.email ?? ""))
+    .toLowerCase()
+    .slice(0, LIMITS.email);
+  const phone = sanitizeHeader(String(body.phone ?? "")).slice(0, LIMITS.phone);
+  const projectDetails = String(body.projectDetails ?? "")
+    .replaceAll("\0", "")
+    .trim()
+    .slice(0, LIMITS.projectDetails);
   const consent =
     body.consent === true || body.consent === "true" || body.consent === "on";
 
@@ -65,12 +120,12 @@ export async function POST(request: Request) {
   const mailTo = process.env.MAIL_TO?.trim() || site.email;
 
   if (!gmailUser || !gmailPass) {
-    console.error("[estimate] Missing GMAIL_USER or GMAIL_APP_PASSWORD");
+    console.error("[estimate] Mail credentials are not configured");
     return NextResponse.json(
       {
         ok: false,
         error:
-          "Email is not configured yet. Please email us directly at imperialhardwoodfloor@gmail.com.",
+          "We could not send your request right now. Please email imperialhardwoodfloor@gmail.com.",
       },
       { status: 503 },
     );
@@ -120,8 +175,8 @@ export async function POST(request: Request) {
       text,
       html,
     });
-  } catch (error) {
-    console.error("[estimate] Nodemailer send failed", error);
+  } catch {
+    console.error("[estimate] Mail send failed");
     return NextResponse.json(
       {
         ok: false,

@@ -18,6 +18,8 @@ const initial = {
   phone: "",
   projectDetails: "",
   consent: false,
+  /** Honeypot — leave empty; bots often fill it. */
+  website: "",
 };
 
 export function EstimateForm() {
@@ -40,6 +42,12 @@ export function EstimateForm() {
     if (values.projectDetails.trim().length < 10) {
       next.projectDetails =
         "Please share a bit more about your floor installation project.";
+    }
+    if (values.projectDetails.trim().length > 5000) {
+      next.projectDetails = "Please keep project details under 5000 characters.";
+    }
+    if (values.name.trim().length > 100) {
+      next.name = "Please use a shorter name.";
     }
     if (!values.consent) {
       next.consent = "Consent is required so we can contact you.";
@@ -108,9 +116,28 @@ export function EstimateForm() {
     <form
       onSubmit={onSubmit}
       noValidate
-      className="space-y-5"
+      className="relative space-y-5"
       aria-describedby="estimate-form-status"
     >
+      {/* Honeypot — hidden from people, visible to many bots */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute -left-[9999px] h-0 w-0 overflow-hidden opacity-0"
+      >
+        <label htmlFor="estimate-website">Website</label>
+        <input
+          id="estimate-website"
+          name="website"
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+          value={values.website}
+          onChange={(e) =>
+            setValues((v) => ({ ...v, website: e.target.value }))
+          }
+        />
+      </div>
+
       <div>
         <label htmlFor="estimate-name" className={labelClass}>
           Name <span className="text-copper-bright">*</span>
@@ -120,6 +147,7 @@ export function EstimateForm() {
           name="name"
           autoComplete="name"
           required
+          maxLength={100}
           value={values.name}
           onChange={(e) => setValues((v) => ({ ...v, name: e.target.value }))}
           className={fieldClass}
@@ -143,6 +171,7 @@ export function EstimateForm() {
           type="email"
           autoComplete="email"
           required
+          maxLength={254}
           value={values.email}
           onChange={(e) => setValues((v) => ({ ...v, email: e.target.value }))}
           className={fieldClass}
@@ -171,6 +200,7 @@ export function EstimateForm() {
           name="phone"
           type="tel"
           autoComplete="tel"
+          maxLength={40}
           value={values.phone}
           onChange={(e) => setValues((v) => ({ ...v, phone: e.target.value }))}
           className={fieldClass}
@@ -196,6 +226,7 @@ export function EstimateForm() {
           name="projectDetails"
           required
           rows={5}
+          maxLength={5000}
           value={values.projectDetails}
           onChange={(e) =>
             setValues((v) => ({ ...v, projectDetails: e.target.value }))

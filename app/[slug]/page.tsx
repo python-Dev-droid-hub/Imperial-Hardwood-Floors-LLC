@@ -34,6 +34,11 @@ export async function generateMetadata({
     title: service.metaTitle,
     description: service.metaDescription,
     alternates: { canonical: path },
+    robots: {
+      index: false,
+      follow: false,
+      googleBot: { index: false, follow: false },
+    },
     openGraph: {
       title: service.metaTitle,
       description: service.metaDescription,
@@ -107,7 +112,9 @@ async function ServiceDetailContent({
     <>
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
+        }}
       />
       <ServicePageView service={service} />
     </>
