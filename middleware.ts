@@ -5,9 +5,11 @@ import type { NextRequest } from "next/server";
  * Security headers for all responses.
  * CSP allows self assets, Unsplash images, OSM map iframe, and inline styles
  * used by Next/font + existing UI.
+ * `unsafe-eval` is only for development (React/Turbopack debugging).
  */
 export function middleware(_request: NextRequest) {
   const response = NextResponse.next();
+  const isDev = process.env.NODE_ENV === "development";
 
   const csp = [
     "default-src 'self'",
@@ -15,7 +17,9 @@ export function middleware(_request: NextRequest) {
     "form-action 'self'",
     "frame-ancestors 'none'",
     "object-src 'none'",
-    "script-src 'self' 'unsafe-inline'",
+    isDev
+      ? "script-src 'self' 'unsafe-inline' 'unsafe-eval'"
+      : "script-src 'self' 'unsafe-inline'",
     "style-src 'self' 'unsafe-inline'",
     "img-src 'self' data: blob: https://images.unsplash.com",
     "font-src 'self' data:",

@@ -40,7 +40,7 @@ export function About({ serviceImages }: AboutProps = {}) {
             <p>
               Explore our{" "}
               <a
-                href="/services"
+                href="/#services"
                 className="font-semibold text-copper underline decoration-copper/30 underline-offset-2 transition-colors hover:text-copper-bright hover:decoration-copper"
               >
                 flooring services
