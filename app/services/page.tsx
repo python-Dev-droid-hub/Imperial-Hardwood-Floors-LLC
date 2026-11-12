@@ -2,21 +2,28 @@ import type { Metadata } from "next";
 import { ServicesIndexView } from "@/components/services/ServicesIndexView";
 import { site } from "@/content/site";
 
+const title = `Flooring Services in Olathe, KS | ${site.businessName}`;
+const description =
+  "Looking for professional flooring services in Olathe, KS? Imperial Hardwood Floors LLC offers hardwood flooring, laminate installation, staircase renovation, custom work, and floor repairs.";
+
 export const metadata: Metadata = {
-  title: "Flooring Services in Olathe KS",
-  description:
-    "Your trusted residential or commercial flooring services contractor in Olathe KS. Hardwood, laminate, staircase, custom work, floor repair, and installation from Imperial Hardwood Floors LLC.",
+  title: { absolute: title },
+  description,
   alternates: { canonical: "/services" },
   robots: {
-    index: false,
-    follow: false,
-    googleBot: { index: false, follow: false },
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true },
   },
   openGraph: {
-    title: `Flooring Services in Olathe KS | ${site.businessName}`,
-    description:
-      "Protect your investment with Imperial Hardwood Floors LLC—professional flooring installation, replacement, and repair services in Olathe, KS.",
+    title,
+    description,
     url: "/services",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
   },
 };
 

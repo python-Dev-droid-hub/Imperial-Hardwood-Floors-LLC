@@ -31,13 +31,13 @@ export async function generateMetadata({
   const path = getServiceHref(service);
 
   return {
-    title: service.metaTitle,
+    title: { absolute: service.metaTitle },
     description: service.metaDescription,
     alternates: { canonical: path },
     robots: {
-      index: false,
-      follow: false,
-      googleBot: { index: false, follow: false },
+      index: true,
+      follow: true,
+      googleBot: { index: true, follow: true },
     },
     openGraph: {
       title: service.metaTitle,

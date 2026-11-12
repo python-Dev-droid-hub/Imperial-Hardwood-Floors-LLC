@@ -68,8 +68,9 @@ export const services: ServicePage[] = [
     brandLine: "Installed clean. Built to last.",
     summary:
       "Our skilled installers deliver precise, seamless floor installation tailored to your specific residential or commercial layout in Olathe, KS.",
-    metaTitle: `Floor Installation in ${location} | ${site.businessName}`,
-    metaDescription: `Floor installation in ${location}. Accurate layout, clean fastening, and clear estimates from ${site.businessName}. Call ${site.phone}.`,
+    metaTitle: `Floor Installation Services in Olathe, KS | ${site.businessName}`,
+    metaDescription:
+      "Get professional floor installation in Olathe, KS. Imperial Hardwood Floors LLC provides quality hardwood, laminate, and custom flooring solutions for residential and commercial properties.",
     image: "/images/services/floor-installation/01-plank-install.jpg",
     imageAlt:
       "Flooring contractor installing dark wood-grain planks in a residential room",
@@ -154,8 +155,9 @@ export const services: ServicePage[] = [
     brandLine: "",
     summary:
       "Partner with Imperial Hardwood Floors LLC, Olathe’s local contractor for seamless residential and commercial hardwood floor installation, repair, and maintenance. Our certified company specializes in flawless new installations and restoring old hardwood floors to perfection. Get your free estimate from Olathe’s trusted team today!",
-    metaTitle: `Hardwood Floors Installation in ${location} | ${site.businessName}`,
-    metaDescription: `Partner with Imperial Hardwood Floors LLC for residential and commercial hardwood floor installation, repair, and maintenance in ${location}. Call ${site.phone}.`,
+    metaTitle: `Hardwood Flooring Installation & Repair in Olathe, KS | ${site.businessName}`,
+    metaDescription:
+      "Upgrade your property with professional hardwood flooring installation and repair in Olathe, KS. Trust Imperial Hardwood Floors LLC for quality craftsmanship and beautiful floors.",
     image: "/images/services/hardwood-floors/01-rustic-plank.jpg",
     imageAlt:
       "Rustic wide-plank hardwood flooring with a polished finish in a large dining hall",
@@ -427,8 +429,9 @@ export const services: ServicePage[] = [
     brandLine: "",
     summary:
       "Imperial Hardwood Floors LLC is your trusted local choice for professional home and office flooring solutions in Olathe, KS. As a certified, expert contractor, we specialize in seamless floor laminate repair, restoration, and maintenance to keep your residential or commercial spaces looking pristine.",
-    metaTitle: `Floor Laminate Services in ${location} | ${site.businessName}`,
-    metaDescription: `Certified floor laminate repair, restoration, and maintenance for homes and offices in ${location}. Call ${site.phone}.`,
+    metaTitle: `Laminate Flooring Installation in Olathe, KS | ${site.businessName}`,
+    metaDescription:
+      "Choose a professional laminate flooring installation in Olathe, KS. Imperial Hardwood Floors LLC delivers durable, stylish, and affordable laminate flooring solutions.",
     image: "/images/services/laminate/07-mallet-tap.png",
     imageAlt:
       "Installer tapping light wood-look laminate planks into place with a mallet",
@@ -701,8 +704,9 @@ export const services: ServicePage[] = [
     brandLine: "",
     summary:
       "As a local and trusted office and home buildings old or used staircase repair contractor, Imperial Hardwood Floors LLC delivers lasting results. From a certified and trusted skilled wooden or tiles staircase repair or maintenance contractor or company Olathe KS to a professional and certified old staircase installation contractor Olathe KS, we elevate every step.",
-    metaTitle: `Staircase Repair & Installation in ${location} | ${site.businessName}`,
-    metaDescription: `Staircase repair, renovation, maintenance, and installation for homes and commercial properties in ${location}. Call ${site.phone}.`,
+    metaTitle: `Staircase Installation & Renovation in Olathe, KS | ${site.businessName}`,
+    metaDescription:
+      "Transform your stairs with professional staircase installation, repair, and renovation in Olathe, KS. Imperial Hardwood Floors LLC delivers beautiful staircase solutions.",
     image: "/images/services/staircase/04-dark-wood-rails.png",
     imageAlt:
       "Dark wood staircase with horizontal metal railings in a residential living space",
@@ -969,8 +973,9 @@ export const services: ServicePage[] = [
     brandLine: "",
     summary:
       "Partner with Imperial Hardwood Floors LLC, your local and trusted office and home buildings custom floor installation repair contractor. We specialize in flawless new installs, tile upgrades, and certified and trusted skilled wooden or tiles custom floor repair or maintenance. Trust our professional and certified old or new custom floor repair contractor Olathe KS experts to restore or transform your surfaces today.",
-    metaTitle: `Custom Floor Installation in ${location} | ${site.businessName}`,
-    metaDescription: `Custom floor installation, design, repair, and replacement for residential and commercial buildings in ${location}. Call ${site.phone}.`,
+    metaTitle: `Custom Flooring Installation & Design in Olathe, KS | ${site.businessName}`,
+    metaDescription:
+      "Enhance your property with custom flooring installation and design in Olathe, KS. Imperial Hardwood Floors LLC provides personalized flooring solutions and quality craftsmanship.",
     image: "/images/services/custom-work/05-plan-review.png",
     imageAlt:
       "Team reviewing blueprints and material samples for a custom flooring project",
@@ -1240,8 +1245,9 @@ export const services: ServicePage[] = [
     brandLine: "",
     summary:
       "Restore the beauty and strength of your property with Imperial Hardwood Floors LLC. As a certified and trusted skilled wooden or tiles floor repair or maintenance contractor or company Olathe KS, we deliver reliable solutions. Depend on our professional and certified old floor repair services contractor Olathe KS team—the top local and trusted office and home buildings floor repair contractor.",
-    metaTitle: `Floor Repair Services in ${location} | ${site.businessName}`,
-    metaDescription: `Certified wooden or tile floor repair and maintenance in ${location}. Restore damaged floors with Imperial Hardwood Floors LLC. Call ${site.phone}.`,
+    metaTitle: `Hardwood & Wood Floor Repair Services in Olathe, KS | ${site.businessName}`,
+    metaDescription:
+      "Restore your floors with professional hardwood and wood floor repair services in Olathe, KS. Imperial Hardwood Floors LLC delivers dependable flooring restoration and repair solutions.",
     image: "/images/services/floor-repair/01-parquet-repair.jpg",
     imageAlt:
       "Technician repairing a section of parquet wood flooring with tools on site",
@@ -1511,8 +1517,9 @@ export const services: ServicePage[] = [
     brandLine: "",
     summary:
       "Imperial Hardwood Floors LLC is your certified and trusted skilled concrete coating, repair, renovation & installation services contractor or company Olathe KS. We deliver precision upgrades for office and home buildings, plus old buildings wall restoration, ensuring durable, spotless surfaces that protect and elevate your property.",
-    metaTitle: `Concrete Coating Services in ${location} | ${site.businessName}`,
-    metaDescription: `Concrete coating, repair, renovation, and installation for residential and commercial properties in ${location}. Call ${site.phone}.`,
+    metaTitle: `Concrete Floor Coating Services in Olathe, KS | ${site.businessName}`,
+    metaDescription:
+      "Upgrade your concrete floors with professional coating and repair services in Olathe, KS. Imperial Hardwood Floors LLC provides durable concrete flooring solutions for your property.",
     image: "/images/services/imperial-concrete-coating/05-finished-driveway.png",
     imageAlt:
       "Residential driveway with a smooth light-gray Imperial concrete coating finish",

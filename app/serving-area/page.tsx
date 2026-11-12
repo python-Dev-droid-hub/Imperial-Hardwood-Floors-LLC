@@ -2,19 +2,28 @@ import type { Metadata } from "next";
 import { ServingAreaPageView } from "@/components/serving-area/ServingAreaPageView";
 import { site } from "@/content/site";
 
+const title = `Flooring Contractor in Olathe, KS | ${site.businessName}`;
+const description =
+  "Looking for professional flooring services in Olathe, KS? Imperial Hardwood Floors LLC offers hardwood flooring, laminate installation, staircase renovation, and floor repairs.";
+
 export const metadata: Metadata = {
-  title: `Serving Areas · Flooring in ${site.locationShort}`,
-  description: `Serving areas for ${site.businessName}. Browse flooring services in ${site.locationShort}—floor installation, hardwood, laminate, staircase, custom work, floor repair, and Imperial concrete coating.`,
+  title: { absolute: title },
+  description,
   alternates: { canonical: "/serving-area" },
   robots: {
-    index: false,
-    follow: false,
-    googleBot: { index: false, follow: false },
+    index: true,
+    follow: true,
+    googleBot: { index: true, follow: true },
   },
   openGraph: {
-    title: `Serving Areas · Flooring in ${site.locationShort} | ${site.businessName}`,
-    description: `Pick your serving area, then open the flooring service page that matches your project in ${site.locationShort}.`,
+    title,
+    description,
     url: "/serving-area",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
   },
 };
 
