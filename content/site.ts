@@ -47,22 +47,32 @@ export const footerLinks = [
 ] as const;
 
 export const heroContent = {
-  eyebrow: "Imperial Hardwood Floors LLC",
-  /** Primary H1 — one service, one location */
-  headline: "Floor Installation in Olathe, KS",
-  brandLine: "Hardwood Floors, Installed Right.",
+  eyebrow: "Flooring Services in Olathe KS",
+  /** Primary H1 — use \n for intentional line breaks */
+  headline:
+    "Your Trusted & Professional Residential or\nCommercial Flooring Services Contractor\nOlathe KS",
+  brandLine: "",
   supporting:
-    "Professional hardwood floor installation for homes across Olathe and nearby Johnson County. Request a clear estimate from Imperial Hardwood Floors LLC.",
+    "Protect your investment with Imperial Hardwood Floors LLC, a local and trusted commercial or residential building flooring installation services contractor in Olathe KS. Work with our best and skilled commercial or residential building hardwood flooring services agency for flawless office buildings flooring installation or repair services and comprehensive hardwood floor repair or maintenance services.",
   primaryCta: { label: "Request an Estimate", href: "/#contact" },
   secondaryCta: { label: "About Us", href: "/#about" },
 } as const;
 
+export const servicesPageBanner = {
+  eyebrow: "Flooring Services in Olathe KS",
+  headline:
+    "Your Trusted & Professional Residential or\nCommercial Flooring Services Contractor\nOlathe KS",
+  supporting:
+    "Protect your investment with Imperial Hardwood Floors LLC, a local and trusted commercial or residential building flooring installation services contractor in Olathe KS. Work with our best and skilled commercial or residential building hardwood flooring services agency for flawless office buildings flooring installation or repair services and comprehensive hardwood floor repair or maintenance services.",
+} as const;
+
 export const aboutContent = {
   eyebrow: "About Us",
-  heading: "Hardwood Floors Built for Everyday Living.",
+  heading:
+    "Imperial Hardwood Floors LLC Best Choice for Commercial or Residential Building Custom or Wood Floor Install or Replace Services Contractor or Company Olathe KS",
   paragraphs: [
-    "A great hardwood floor starts with careful install work—accurate layout, clean cuts, proper fastening, and transitions that look intentional from room to room.",
-    "Imperial Hardwood Floors LLC installs hardwood floors for homeowners in Olathe, Kansas. We keep the process practical: scope the rooms, confirm the product and prep, then install with clean workmanship and clear communication.",
+    "At Imperial Hardwood Floors LLC, we take pride in delivering top-tier craftsmanship for every property. Whether you are upgrading your home or renovating a business space, we are your premier choice for high-quality floor installation and complete replacements.",
+    "Our team specializes in premium hardwood floors, durable laminate, custom staircase transformations, and detailed custom work tailored to your design vision. Beyond new installs, our expert floor repair services restore strength and elegance to worn or damaged surfaces. From minor touch-ups to full-scale commercial installations in Olathe, KS, we deliver lasting durability and precision woodwork designed to enhance your property's overall value.",
   ],
   cta: { label: "Request an Estimate", href: "/#contact" },
   image: {
@@ -73,104 +83,83 @@ export const aboutContent = {
 
 export const servicesContent = {
   eyebrow: "Floor Installation",
-  title: "Hardwood Floor Installation in Olathe",
+  title:
+    "Hire Now a Professional Hardwood Floor Installation Services Provider Olathe KS",
   description:
-    "Focused hardwood floor installation for new homes, replacements, and remodel projects. Scope is confirmed during project discussion so every estimate matches the rooms and work you need.",
+    "Work with our best and skilled commercial or residential building hardwood flooring services agency for flawless office buildings flooring installation or repair services and comprehensive hardwood floor repair or maintenance services.",
   items: [
     {
-      title: "New Hardwood Installation",
-      body: "Full hardwood floor installation for new construction and empty rooms—from layout and starting lines through fastening and finish-ready surfaces.",
+      title: "New Floor Installation",
+      body: "We expertly install premium hardwood, laminate, and custom flooring engineered for durability, seamless performance, and long-lasting beauty in any space.",
       image: "/images/hero/floor-hero.jpg",
       alt: "Dark hardwood flooring installed in a finished bedroom",
     },
     {
       title: "Floor Replacement",
-      body: "Remove the old surface and install new hardwood with careful attention to thresholds, baseboards, and transitions between rooms.",
+      body: "Upgrade your property by safely removing old, worn surfaces and replacing them with high-quality, modern flooring materials built to last.",
       image: "/images/hero/floor-planks.jpg",
       alt: "Light hardwood flooring spanning an open living and dining space",
     },
     {
-      title: "Remodel & Room Installs",
-      body: "Hardwood installation for remodeled kitchens, living rooms, hallways, and expanded living space that needs to match or renew the rest of the home.",
+      title: "Floor Repair",
+      body: "Restore the elegance and strength of your existing floors with expert repairs targeting scratches, water damage, warping, and structural wear.",
       image: "/images/hero/floor-living.jpg",
       alt: "Hardwood flooring in a remodeled residential living space",
     },
   ],
 } as const;
 
+export const ctaContent = {
+  eyebrow: "Hire Now",
+  heading:
+    "Hire Now a Imperial Hardwood Floors LLC for Your Flooring Installation",
+  body: "Choose Imperial Hardwood Floors LLC for flawless installation. Our skilled team delivers premium craftsmanship, durable materials, and precise execution to transform your residential or commercial space in Olathe, KS.",
+} as const;
+
 export const serviceAreaContent = {
   eyebrow: "Service Area",
-  title: "Floor Installation in Olathe, KS",
+  title:
+    "Certified Or Trusted Flooring Installation or Replacement Services Agency",
   intro:
-    "Imperial Hardwood Floors LLC focuses this page on hardwood floor installation for homeowners in Olathe, Kansas. If you need new floors, a replacement, or install work as part of a remodel, this is where that conversation starts.",
+    "Choosing a certified and trusted agency ensures your property receives top-tier craftsmanship and durable materials built to last. Imperial Hardwood Floors LLC brings years of proven expertise to every project, delivering seamless flooring installation and structural replacement tailored to your needs.",
   sections: [
     {
-      heading: "One trade, one local focus",
+      heading: "Floor Installation",
       body: [
-        "This page is written for hardwood floor installation in Olathe—not every flooring product and not every city at once. That focus keeps the message honest: the work is install, the geography is local, and the next step is a clear estimate conversation about your rooms and timeline.",
-        "Olathe homes range from newer builds to established neighborhoods across Johnson County. Install decisions here are practical—subfloor condition, moisture, transitions, furniture moves, and living around an active job all belong in the plan before boards go down.",
+        "Our skilled installers deliver precise, seamless floor installation tailored to your specific residential or commercial layout. We handle every phase with meticulous attention to detail, preparing subfloors correctly to guarantee lasting stability. Upgrade your space with durable, high-performing floors designed to withstand high foot traffic while enhancing aesthetic appeal.",
       ],
     },
     {
-      heading: "New hardwood floors in Olathe",
+      heading: "Hardwood Floors",
       body: [
-        "New hardwood needs careful layout, acclimation awareness, and solid fastening so the floor looks even and stays quiet underfoot. From starting lines to doorways and transitions, the goal is a clean install that holds up to daily living.",
-        "When you request an estimate, share room sizes or a rough floor plan, product preferences, preferred timing, and access details. Scope is confirmed in discussion. Timelines depend on material readiness, site conditions, and how install fits into the rest of your project.",
-      ],
-      subheadings: [
-        {
-          title: "What a clean install protects",
-          body: [
-            "Good install work protects both the look of the floor and everyday comfort. Transitions, expansion gaps, and fastening all work better when the plan is clear up front. That is the standard Imperial Hardwood Floors LLC brings to hardwood installation in the Olathe area.",
-          ],
-        },
+        "Enhance your property’s elegance and value with our premium hardwood floors selection. We expertly craft, lay, and fit solid or engineered wood options that bring warmth and classic sophistication to any interior. Enjoy timeless beauty, natural durability, and top-tier craftsmanship engineered to last for generations to come.",
       ],
     },
     {
-      heading: "Replacing existing floors",
+      heading: "Laminate",
       body: [
-        "Replacement installs are often more involved than empty-room jobs because thresholds, baseboards, and adjacent surfaces set real constraints. Matching elevations and protecting doorways matters when the finished floor has to feel continuous—not patched in.",
-        "An estimate conversation usually covers tear-out needs, temporary protection, sequencing around occupied living space, and how the new floor hands off to trim. Bring product samples or links if you have them; a short room list still works early on.",
+        "Get the striking look of real hardwood or natural stone at a budget-friendly price point with modern laminate flooring. Engineered for high resilience, our quality laminate materials offer exceptional resistance against scratches, dents, and daily wear. It is an ideal, low-maintenance solution for busy households and active commercial spaces.",
       ],
     },
     {
-      heading: "Remodels and expanded living space",
+      heading: "Staircase",
       body: [
-        "Remodel installs can mean matching an existing hardwood look, continuing a pattern into a new room, or starting fresh after a kitchen or living-area update. These jobs reward careful measuring because the existing home sets the rules.",
-        "We keep the conversation on scope: what product is going in, how it meets existing floors, what prep is needed, and how the finished floor should leave the space ready for trim and living. No inflated claims—just a practical path from inquiry to scoped estimate.",
-      ],
-      subheadings: [
-        {
-          title: "When to start the estimate talk",
-          body: [
-            "If you are choosing hardwood for a remodel, replacement, or new living space, clarify install scope before the product is ordered. Starting early helps avoid mid-project surprises and keeps expectations aligned with the space and timeline.",
-          ],
-        },
+        "Transform your staircase into a breathtaking architectural centerpiece with our specialized woodworking and fitting services. We craft custom treads, risers, and trim elements that integrate seamlessly with your surrounding floors. Trust our team to improve safety, structural integrity, and visual flow across every level of your property.",
       ],
     },
     {
-      heading: "Local context: homes, schedules, and sequencing",
+      heading: "Custom Work",
       body: [
-        "Kansas climate and Olathe’s housing mix influence how hardwood installs should be planned. Humidity, access in finished homes, and family schedules can all affect when install starts and how the site stays organized. Those realities belong in the estimate conversation.",
-        "This page is for floor installation in Olathe. Nearby communities may be discussed case by case. Until separate location pages are published, the commitment on this site stays specific.",
+        "Bring your unique design vision to reality with our bespoke custom work solutions. From intricate border accents and unique inlay patterns to custom stains, we tailor every detail to your exact specifications. We turn complex flooring concepts into one-of-a-kind visual statements that set your property apart effortlessly.",
       ],
     },
     {
-      heading: "Working with product choices and other trades",
+      heading: "Floor Repair or Replacement",
       body: [
-        "Floor installation rarely happens alone. Product lead times, trim work, painters, and furniture moves all need windows. A useful install partner keeps communication practical: what is locked, what is still open, and what the floor must accommodate next.",
-        "Bring questions about transitions, underlayment, moisture, and site logistics early. The clearer those details are, the cleaner the estimate and the smoother the handoff once installation is complete.",
-      ],
-    },
-    {
-      heading: "How to start an estimate",
-      body: [
-        "Use the contact form on this page or email Imperial Hardwood Floors. Include a short project description, your Olathe location or neighborhood, preferred timing, and any product preferences or photos. You will get a conversation focused on scope—not pressure.",
-        "After the scope is understood, you receive an estimate tied to the discussed work. Scheduling depends on project readiness and material timing: clarify the work, price the work, then plan the calendar.",
+        "Restore safety, strength, and beauty to damaged surfaces with our floor repair or replacement services. We tackle everything from minor scratches, warping, and board replacements to full structural overhauls. Our team accurately matches existing finishes and materials, ensuring a smooth, flawless outcome that looks good as new.",
       ],
     },
   ],
-  note: "This site is focused on Olathe, KS only.",
   cta: { label: "Request an Estimate", href: "/#contact" },
   image: {
     src: "/images/service-area/olathe-landmark.png",
@@ -254,9 +243,9 @@ export const reviewsContent = {
 
 export const faqContent = {
   eyebrow: "FAQs",
-  title: "Questions About Floor Installation",
+  title: "Find quick answers to common flooring installation and repair questions.",
   description:
-    "Straight answers about hardwood floor installation in Olathe—scope, estimates, and what to share before we talk.",
+    "Straight answers about flooring installation, repair, and replacement services in Olathe, KS.",
   image: {
     src: "/images/hero/floor-room.jpg",
     alt: "Hardwood flooring in a residential interior",
@@ -264,34 +253,35 @@ export const faqContent = {
   },
   items: [
     {
-      question: "What floor installation work do you focus on?",
+      question: "What types of flooring materials do you install?",
       answer:
-        "This page covers hardwood floor installation for new installs, replacements, and remodel projects in the Olathe area. Specific scope is confirmed during project discussion.",
+        "We specialize in installing solid hardwood, engineered wood, durable laminate, custom staircase components, and specialty materials tailored for both residential homes and commercial properties in Olathe, KS.",
     },
     {
-      question: "How do I request an estimate?",
+      question: "How long does a typical flooring installation project take?",
       answer:
-        "Use the estimate form on this page or email Imperial Hardwood Floors. Include a short project description, location in Olathe, and any product preferences or photos you can share.",
+        "Project timelines depend on room size and material selection. Most standard residential installations wrap up within 1 to 3 days, while custom work or larger commercial jobs may take longer.",
     },
     {
-      question: "What should I prepare before we talk?",
+      question: "Do you handle floor repairs or just full replacements?",
       answer:
-        "Helpful details include project address, rooms involved, approximate square footage, product preferences, and preferred timing. Photos are useful when available, but early conversations can start without a full material selection.",
+        "We offer comprehensive services including minor scratch repair, board replacements, water damage restoration, structural subfloor repairs, and complete floor replacements when worn surfaces can no longer be restored.",
     },
     {
-      question: "How is scheduling handled?",
+      question: "Can you match new wood flooring to my existing floors?",
       answer:
-        "Scheduling depends on project scope, site readiness, and material timing. Timeline expectations are discussed after the scope is understood—not before.",
+        "Yes, our team accurately matches wood species, grain patterns, and custom stain colors so your new flooring integrates seamlessly with your property’s existing hardwood or adjoining rooms.",
     },
     {
-      question: "Do you serve areas outside Olathe?",
+      question:
+        "How should I prepare my space before the installation crew arrives?",
       answer:
-        "This page is focused on Olathe, KS. If you are elsewhere, contact us and we can tell you whether the project can be considered or whether a different location page applies.",
+        "Please clear the installation area of personal items, breakables, and small furniture. Our team will coordinate remaining preparation steps, including subfloor leveling, surface prep, and material delivery beforehand.",
     },
     {
-      question: "Will I get a fixed price on first contact?",
+      question: "Why should I choose Imperial Hardwood Floors LLC for my project?",
       answer:
-        "Estimates are based on discussed scope. Early outreach helps start the conversation; a meaningful estimate follows once the installation work is clearly defined.",
+        "As a certified local contractor, Imperial Hardwood Floors LLC delivers premium craftsmanship, transparent estimates, top-grade materials, and reliable service dedicated to maximizing your property’s long-term visual and structural value.",
     },
   ],
 } as const;

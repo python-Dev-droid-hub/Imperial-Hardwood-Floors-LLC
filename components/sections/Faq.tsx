@@ -4,8 +4,21 @@ import Image from "next/image";
 import { useState } from "react";
 import { faqContent } from "@/content/site";
 
-export function Faq() {
+type FaqProps = {
+  content?: {
+    eyebrow?: string;
+    title: string;
+    description?: string;
+    items: { question: string; answer: string }[];
+  };
+};
+
+export function Faq({ content }: FaqProps = {}) {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
+  const eyebrow = content?.eyebrow ?? faqContent.eyebrow;
+  const title = content?.title ?? faqContent.title;
+  const description = content?.description ?? faqContent.description;
+  const items = content?.items ?? faqContent.items;
 
   return (
     <section
@@ -52,20 +65,20 @@ export function Faq() {
         <div className="flex flex-col justify-center px-5 py-12 md:px-10 md:py-14 lg:px-12 lg:py-16 xl:px-14">
           <div className="mx-auto w-full max-w-xl">
             <p className="mb-3 text-[0.68rem] font-semibold uppercase tracking-[0.28em] text-copper">
-              {faqContent.eyebrow}
+              {eyebrow}
             </p>
             <h2
               id="faq-heading"
-              className="max-w-lg font-display text-[clamp(1.85rem,3.5vw,2.75rem)] font-semibold leading-[1.08] tracking-[-0.02em] text-charcoal"
+              className="max-w-lg font-display text-[clamp(1.4rem,2.8vw,2.25rem)] font-semibold leading-[1.18] tracking-[-0.015em] text-charcoal"
             >
-              {faqContent.title}
+              {title}
             </h2>
             <p className="mt-4 max-w-md text-base leading-relaxed text-stone-ink">
-              {faqContent.description}
+              {description}
             </p>
 
             <div className="mt-10 divide-y divide-charcoal/10 border-y border-charcoal/10">
-              {faqContent.items.map((item, index) => {
+              {items.map((item, index) => {
                 const open = openIndex === index;
                 const panelId = `faq-panel-${index}`;
                 const buttonId = `faq-button-${index}`;

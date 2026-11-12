@@ -1,11 +1,11 @@
 /**
  * LOCKED services index = simple banner + homepage sections.
- * Card list data still comes from content/services.ts via HomeSections.
+ * Change copy only in content/site.ts (servicesPageBanner + shared sections).
  */
 import { Footer } from "@/components/layout/Footer";
 import { HomeSections } from "@/components/sections/HomeSections";
 import { PageBanner } from "@/components/sections/PageBanner";
-import { site } from "@/content/site";
+import { servicesPageBanner } from "@/content/site";
 
 export function ServicesIndexView() {
   return (
@@ -16,9 +16,9 @@ export function ServicesIndexView() {
             src: "/images/services/floor-installation/01-plank-install.jpg",
             alt: "Flooring contractor installing wood-grain planks in a residential room",
           }}
-          eyebrow={`Services · ${site.locationShort}`}
-          headline={`Flooring Services in ${site.locationShort}`}
-          supporting="Seven focused services for Olathe homes—from hardwood and laminate to stairs, repairs, custom details, and Imperial concrete coating."
+          eyebrow={servicesPageBanner.eyebrow}
+          headline={servicesPageBanner.headline}
+          supporting={servicesPageBanner.supporting}
         />
         <HomeSections />
       </main>

@@ -33,7 +33,7 @@ export function ServingAreaPageView() {
 
           <div className="relative z-10 mx-auto flex min-h-[70svh] max-w-7xl items-end px-5 pb-16 pt-36 md:items-center md:px-8 md:pb-24 md:pt-40">
             <div className="max-w-3xl">
-              <h1 className="font-display text-[clamp(2.2rem,5.5vw,4.35rem)] font-semibold leading-[1.02] tracking-[-0.02em]">
+              <h1 className="font-display text-[clamp(1.4rem,2.8vw,2.25rem)] font-semibold leading-[1.18] tracking-[-0.015em]">
                 {servingAreaHero.headline}
               </h1>
               <p className="mt-6 max-w-xl text-base leading-relaxed text-ivory/78 md:text-lg">
@@ -76,7 +76,7 @@ export function ServingAreaPageView() {
                 <div className={imageLeft ? "lg:order-2" : "lg:order-1"}>
                   <h2
                     id={`${area.slug}-heading`}
-                    className="font-display text-[clamp(1.85rem,3.8vw,2.75rem)] font-semibold leading-[1.08] tracking-[-0.02em]"
+                    className="font-display text-[clamp(1.4rem,2.8vw,2.25rem)] font-semibold leading-[1.18] tracking-[-0.015em]"
                   >
                     {area.headline}
                   </h2>
@@ -107,7 +107,7 @@ export function ServingAreaPageView() {
               <p className="text-[0.68rem] font-semibold uppercase tracking-[0.28em] text-copper-bright">
                 Ready to start
               </p>
-              <h2 className="mt-3 font-display text-[clamp(1.6rem,3vw,2.25rem)] font-semibold tracking-tight">
+              <h2 className="mt-3 font-display text-[clamp(1.4rem,2.8vw,2.25rem)] font-semibold leading-[1.18] tracking-[-0.015em]">
                 Tell us about your {site.locationShort} project
               </h2>
             </div>

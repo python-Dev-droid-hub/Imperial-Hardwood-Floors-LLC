@@ -9,11 +9,25 @@ import type { MediaImage } from "@/lib/service-images";
 
 type AboutProps = {
   serviceImages?: MediaImage[];
+  content?: {
+    eyebrow?: string;
+    heading: string;
+    paragraphs: string[];
+  };
+  orbitSteps?: { title: string; content: string }[];
 };
 
-export function About({ serviceImages }: AboutProps = {}) {
+export function About({
+  serviceImages,
+  content,
+  orbitSteps,
+}: AboutProps = {}) {
   const ref = useRef<HTMLElement>(null);
   useReveal({ scope: ref, stagger: 0.1, id: "reveal-about" });
+
+  const eyebrow = content?.eyebrow ?? aboutContent.eyebrow;
+  const heading = content?.heading ?? aboutContent.heading;
+  const paragraphs = content?.paragraphs ?? [...aboutContent.paragraphs];
 
   return (
     <section
@@ -25,42 +39,18 @@ export function About({ serviceImages }: AboutProps = {}) {
       <div className="about-inner mx-auto grid w-full max-w-7xl items-center gap-10 lg:grid-cols-2 lg:gap-16">
         <div className="about-copy max-w-xl" data-reveal>
           <p className="about-eyebrow mb-4 text-[0.68rem] font-semibold uppercase tracking-[0.28em] text-copper">
-            {aboutContent.eyebrow}
+            {eyebrow}
           </p>
           <h2
             id="about-heading"
-            className="about-heading font-display text-[clamp(1.85rem,4.2vw,3.25rem)] font-semibold leading-[1.05] tracking-[-0.02em] text-charcoal"
+            className="about-heading font-display text-[clamp(1.25rem,2.4vw,1.95rem)] font-semibold leading-[1.2] tracking-[-0.015em] text-charcoal"
           >
-            {aboutContent.heading}
+            {heading}
           </h2>
           <div className="about-body mt-6 space-y-4 text-base leading-relaxed text-stone-ink md:text-lg">
-            {aboutContent.paragraphs.map((paragraph) => (
+            {paragraphs.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>
             ))}
-            <p>
-              Explore our{" "}
-              <a
-                href="/#services"
-                className="font-semibold text-copper underline decoration-copper/30 underline-offset-2 transition-colors hover:text-copper-bright hover:decoration-copper"
-              >
-                flooring services
-              </a>{" "}
-              or jump to the{" "}
-              <a
-                href="/serving-area"
-                className="font-semibold text-copper underline decoration-copper/30 underline-offset-2 transition-colors hover:text-copper-bright hover:decoration-copper"
-              >
-                Olathe service area
-              </a>{" "}
-              details—then{" "}
-              <a
-                href="/#contact"
-                className="font-semibold text-copper underline decoration-copper/30 underline-offset-2 transition-colors hover:text-copper-bright hover:decoration-copper"
-              >
-                request an estimate
-              </a>
-              .
-            </p>
           </div>
           <div className="about-cta mt-8">
             <Button href={aboutContent.cta.href} variant="primaryOnLight">
@@ -70,7 +60,7 @@ export function About({ serviceImages }: AboutProps = {}) {
         </div>
 
         <div className="about-visual w-full overflow-visible" data-reveal>
-          <AboutOrbit serviceImages={serviceImages} />
+          <AboutOrbit serviceImages={serviceImages} steps={orbitSteps} />
           <p className="mt-2 text-center text-xs text-stone">
             Tap a node to explore each stage of floor installation.
           </p>

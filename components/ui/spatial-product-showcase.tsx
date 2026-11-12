@@ -212,7 +212,7 @@ export default function SpatialServiceShowcase({
 
               <motion.h3
                 variants={itemVariants}
-                className="font-display text-[clamp(1.85rem,3.5vw,2.75rem)] font-semibold leading-[1.08] tracking-[-0.02em] text-charcoal"
+                className="font-display text-[clamp(1.4rem,2.8vw,2.25rem)] font-semibold leading-[1.18] tracking-[-0.015em] text-charcoal"
               >
                 {current.title}
               </motion.h3>

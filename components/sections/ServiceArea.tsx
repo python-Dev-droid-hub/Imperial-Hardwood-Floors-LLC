@@ -7,14 +7,27 @@ import type { MediaImage } from "@/lib/service-images";
 
 type ServiceAreaProps = {
   sideImage?: MediaImage;
+  content?: {
+    eyebrow?: string;
+    title: string;
+    intro: string;
+    sections: { heading: string; body: string[] }[];
+  };
 };
 
-export function ServiceArea({ sideImage }: ServiceAreaProps = {}) {
+export function ServiceArea({
+  sideImage,
+  content,
+}: ServiceAreaProps = {}) {
   const image = {
     src: sideImage?.src ?? serviceAreaContent.image.src,
     alt: sideImage?.alt ?? serviceAreaContent.image.alt,
     caption: serviceAreaContent.image.caption,
   };
+  const eyebrow = content?.eyebrow ?? serviceAreaContent.eyebrow;
+  const title = content?.title ?? serviceAreaContent.title;
+  const intro = content?.intro ?? serviceAreaContent.intro;
+  const sections = content?.sections ?? serviceAreaContent.sections;
 
   return (
     <section
@@ -42,20 +55,20 @@ export function ServiceArea({ sideImage }: ServiceAreaProps = {}) {
         <div className="px-5 py-12 md:px-10 md:py-16 lg:px-12 lg:py-20 xl:px-16">
           <div className="mx-auto max-w-xl xl:max-w-2xl">
             <p className="text-[0.68rem] font-semibold uppercase tracking-[0.28em] text-copper">
-              {serviceAreaContent.eyebrow}
+              {eyebrow}
             </p>
             <h2
               id="area-heading"
-              className="mt-4 font-display text-[clamp(2rem,4.2vw,3.25rem)] font-semibold leading-[1.08] tracking-[-0.02em] text-charcoal"
+              className="mt-4 font-display text-[clamp(1.4rem,2.8vw,2.25rem)] font-semibold leading-[1.18] tracking-[-0.015em] text-charcoal"
             >
-              {serviceAreaContent.title}
+              {title}
             </h2>
             <p className="mt-6 text-base leading-relaxed text-stone-ink md:text-lg">
-              {serviceAreaContent.intro}
+              {intro}
             </p>
 
             <div className="mt-10 space-y-10">
-              {serviceAreaContent.sections.map((section) => (
+              {sections.map((section) => (
                 <article key={section.heading} className="space-y-5">
                   <h3 className="font-display text-2xl font-semibold tracking-tight text-charcoal md:text-[1.65rem]">
                     {section.heading}
@@ -69,7 +82,9 @@ export function ServiceArea({ sideImage }: ServiceAreaProps = {}) {
                     </p>
                   ))}
                   {"subheadings" in section &&
-                    section.subheadings?.map((sub) => (
+                    Array.isArray(section.subheadings) &&
+                    section.subheadings.map(
+                      (sub: { title: string; body: readonly string[] }) => (
                       <div key={sub.title} className="space-y-3 border-l-2 border-copper/40 pl-5">
                         <h4 className="text-sm font-semibold uppercase tracking-[0.14em] text-charcoal">
                           {sub.title}
@@ -87,17 +102,6 @@ export function ServiceArea({ sideImage }: ServiceAreaProps = {}) {
                 </article>
               ))}
             </div>
-
-            <p className="mt-12 text-sm leading-relaxed text-stone">
-              {serviceAreaContent.note}{" "}
-              <a
-                href="/serving-area"
-                className="font-semibold text-copper underline decoration-copper/30 underline-offset-2 transition-colors hover:text-copper-bright"
-              >
-                Open the full serving area page
-              </a>
-              .
-            </p>
 
             <div className="mt-10 flex flex-col gap-3 sm:flex-row sm:items-center">
               <Button href={serviceAreaContent.cta.href} variant="primaryOnLight">

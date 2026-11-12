@@ -2,9 +2,10 @@ import { faqContent, site } from "@/content/site";
 import { getSiteUrl } from "@/lib/site-url";
 
 export const seo = {
-  title: `Floor Installation in Olathe, KS | ${site.businessName}`,
-  description: `Professional hardwood floor installation in Olathe, KS. New installs, replacements, and remodel flooring. Call ${site.phone} or email ${site.email}. Hours: ${site.hoursShort} Central Time.`,
+  title: `Flooring Services in Olathe KS | ${site.businessName}`,
+  description: `Your trusted residential or commercial flooring services contractor in Olathe KS. Hardwood, laminate, installation, repair, and replacement from ${site.businessName}. Call ${site.phone}.`,
   keywords: [
+    "flooring services Olathe KS",
     "floor installation Olathe",
     "hardwood floor installation Olathe KS",
     "hardwood flooring contractor Olathe",

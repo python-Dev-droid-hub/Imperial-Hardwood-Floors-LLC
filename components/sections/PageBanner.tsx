@@ -26,7 +26,7 @@ export function PageBanner({
   return (
     <section
       className="relative min-h-[42svh] overflow-hidden bg-charcoal text-ivory md:min-h-[48svh]"
-      aria-label={ariaLabel ?? headline}
+      aria-label={ariaLabel ?? headline.replace(/\n/g, " ")}
     >
       <div className="absolute inset-0">
         <Image
@@ -46,10 +46,14 @@ export function PageBanner({
           <p className="mb-3 text-[0.68rem] font-semibold uppercase tracking-[0.28em] text-copper-bright">
             {eyebrow}
           </p>
-          <h1 className="font-display text-[clamp(2rem,4.5vw,3.5rem)] font-semibold leading-[1.05] tracking-[-0.02em]">
-            {headline}
+          <h1 className="font-display text-[clamp(1.4rem,2.8vw,2.25rem)] font-semibold leading-[1.2] tracking-[-0.015em]">
+            {headline.split("\n").map((line) => (
+              <span key={line} className="block">
+                {line}
+              </span>
+            ))}
           </h1>
-          <p className="mt-4 max-w-xl text-base leading-relaxed text-ivory/78 md:text-lg">
+          <p className="mt-4 max-w-xl text-sm leading-relaxed text-ivory/78 md:text-base">
             {supporting}
           </p>
           <div className="mt-7">

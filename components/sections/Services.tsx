@@ -12,9 +12,9 @@ const defaultShowcaseItems: ServiceShowcaseItem[] = [
   {
     id: "new-install",
     label: "New Install",
-    title: "New Hardwood Installation",
+    title: "New Floor Installation",
     description:
-      "Full hardwood floor installation for new homes and empty rooms in Olathe—from early layout through fastening and finish-ready surfaces. Clean measuring, solid fastening, and even boards set up a floor that looks right and lasts. Share room sizes, product preferences, site access notes, and timing when you request an estimate so the conversation stays practical. Work is discussed before it is priced—no one-size quotes—so the install matches your space and timeline.",
+      "We expertly install premium hardwood, laminate, and custom flooring engineered for durability, seamless performance, and long-lasting beauty in any space.",
     image: "/images/hero/floor-hero.jpg",
     imageAlt: "Dark hardwood flooring installed in a finished bedroom",
     accent: "copper",
@@ -26,7 +26,7 @@ const defaultShowcaseItems: ServiceShowcaseItem[] = [
     label: "Replacement",
     title: "Floor Replacement",
     description:
-      "Floor replacement for Olathe homes, with careful attention to tear-out, thresholds, and transitions between rooms. Occupied homes need clear sequencing, temporary protection, and access planning while living space stays in use. Bring product samples or photos if you have them; a room list still helps start the talk. Scope is confirmed in conversation, then estimated around the real prep and install work your project needs.",
+      "Upgrade your property by safely removing old, worn surfaces and replacing them with high-quality, modern flooring materials built to last.",
     image: "/images/hero/floor-planks.jpg",
     imageAlt: "Light hardwood flooring in an open living and dining space",
     accent: "charcoal",
@@ -34,11 +34,11 @@ const defaultShowcaseItems: ServiceShowcaseItem[] = [
     ctaLabel: "Request an Estimate",
   },
   {
-    id: "remodel",
-    label: "Remodel",
-    title: "Remodel & Room Installs",
+    id: "repair",
+    label: "Repair",
+    title: "Floor Repair",
     description:
-      "Hardwood installation for remodeled kitchens, living rooms, hallways, and expanded living space in Olathe. Matching patterns, elevations, and transitions matter when the existing house sets the constraints. Share what is changing, what stays, preferred timing, and any product notes you have. You get an install-focused estimate after the work is defined, leaving the floor ready for trim and everyday living.",
+      "Restore the elegance and strength of your existing floors with expert repairs targeting scratches, water damage, warping, and structural wear.",
     image: "/images/hero/floor-living.jpg",
     imageAlt: "Hardwood flooring in a remodeled residential living space",
     accent: "stone",
@@ -49,15 +49,36 @@ const defaultShowcaseItems: ServiceShowcaseItem[] = [
 
 type ServicesProps = {
   serviceImages?: MediaImage[];
+  title?: string;
+  items?: { label: string; title: string; description: string }[];
 };
 
-export function Services({ serviceImages }: ServicesProps = {}) {
+export function Services({
+  serviceImages,
+  title,
+  items,
+}: ServicesProps = {}) {
   const ref = useRef<HTMLElement>(null);
   useReveal({ scope: ref, stagger: 0.08, id: "reveal-services" });
 
+  const baseItems =
+    items?.length
+      ? defaultShowcaseItems.map((item, index) => {
+          const override = items[index];
+          return override
+            ? {
+                ...item,
+                label: override.label,
+                title: override.title,
+                description: override.description,
+              }
+            : item;
+        })
+      : defaultShowcaseItems;
+
   const showcaseItems =
     serviceImages && serviceImages.length > 0
-      ? defaultShowcaseItems.map((item, index) => {
+      ? baseItems.map((item, index) => {
           const photo = serviceImages[index % serviceImages.length];
           return {
             ...item,
@@ -65,7 +86,7 @@ export function Services({ serviceImages }: ServicesProps = {}) {
             imageAlt: photo.alt,
           };
         })
-      : defaultShowcaseItems;
+      : baseItems;
 
   return (
     <section
@@ -78,9 +99,9 @@ export function Services({ serviceImages }: ServicesProps = {}) {
         <div data-reveal className="mx-auto max-w-3xl text-center">
           <h2
             id="services-heading"
-            className="font-display text-[clamp(1.85rem,4vw,2.75rem)] font-semibold leading-[1.12] tracking-[-0.02em] text-charcoal"
+            className="font-display text-[clamp(1.4rem,2.8vw,2.25rem)] font-semibold leading-[1.18] tracking-[-0.015em] text-charcoal"
           >
-            {servicesContent.title}
+            {title ?? servicesContent.title}
           </h2>
         </div>
 

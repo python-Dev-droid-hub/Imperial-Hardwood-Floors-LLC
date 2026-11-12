@@ -52,23 +52,29 @@ export function Hero({
 
       <div className="relative z-10 flex h-full items-end md:items-center">
         <div className="mx-auto w-full max-w-7xl px-5 pb-16 pt-36 drop-shadow-[0_2px_24px_rgba(20,18,16,0.45)] md:px-8 md:pb-24 md:pt-44">
-          <p className="mb-5 mt-2 text-[0.68rem] font-semibold uppercase tracking-[0.32em] text-copper-bright md:mb-6 md:mt-4">
+          <p className="mb-3 mt-2 text-[0.68rem] font-semibold uppercase tracking-[0.32em] text-copper-bright md:mb-4 md:mt-3">
             {eyebrow}
           </p>
 
-          <h1 className="max-w-3xl font-display text-[clamp(2.35rem,6.5vw,4.75rem)] font-semibold leading-[0.98] tracking-[-0.02em] text-ivory">
-            {headline}
+          <h1 className="max-w-3xl font-display text-[clamp(1.4rem,2.8vw,2.25rem)] font-semibold leading-[1.2] tracking-[-0.015em] text-ivory">
+            {headline.split("\n").map((line) => (
+              <span key={line} className="block">
+                {line}
+              </span>
+            ))}
           </h1>
 
-          <p className="mt-4 max-w-2xl font-display text-[clamp(1.35rem,3.2vw,2.15rem)] font-semibold leading-tight tracking-[-0.01em] text-ivory/88 md:mt-5">
-            {brandLine}
-          </p>
+          {brandLine ? (
+            <p className="mt-3 max-w-2xl font-display text-[clamp(1.1rem,2vw,1.4rem)] font-semibold leading-tight tracking-[-0.01em] text-ivory/88 md:mt-4">
+              {brandLine}
+            </p>
+          ) : null}
 
-          <p className="mt-6 max-w-xl text-base leading-relaxed text-ivory/78 md:mt-8 md:text-lg">
+          <p className="mt-4 max-w-xl text-sm leading-relaxed text-ivory/78 md:mt-5 md:text-base">
             {supporting}
           </p>
 
-          <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:items-center md:mt-10">
+          <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:items-center md:mt-7">
             <Button href={primaryCta.href} variant="primary">
               {primaryCta.label}
             </Button>

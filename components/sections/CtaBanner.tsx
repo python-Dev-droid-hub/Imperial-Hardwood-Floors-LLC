@@ -1,28 +1,38 @@
 "use client";
 
 import FinalCtaBanner from "@/components/ui/final-cta-banner";
-import { site } from "@/content/site";
+import { ctaContent, site } from "@/content/site";
 import type { MediaImage } from "@/lib/service-images";
 
 type CtaBannerProps = {
   backgroundImage?: MediaImage;
   serviceName?: string;
+  content?: {
+    eyebrow?: string;
+    heading: string;
+    body: string;
+  };
 };
 
 export function CtaBanner({
   backgroundImage,
   serviceName,
+  content,
 }: CtaBannerProps = {}) {
-  const heading = serviceName
-    ? `Let's talk about your ${serviceName.toLowerCase()} project in ${site.locationShort}.`
-    : `Let's install your next hardwood floor in ${site.locationShort}.`;
+  const heading =
+    content?.heading ??
+    (serviceName
+      ? `Let's talk about your ${serviceName.toLowerCase()} project in ${site.locationShort}.`
+      : ctaContent.heading);
+  const body = content?.body ?? ctaContent.body;
+  const eyebrow = content?.eyebrow ?? ctaContent.eyebrow;
 
   return (
     <div id="get-started" className="scroll-mt-24 bg-ivory px-5 py-10 md:px-8 md:py-14">
       <FinalCtaBanner
-        eyebrow="Ready to install"
+        eyebrow={eyebrow}
         heading={heading}
-        body={`Tell us about your new install, replacement, or remodel flooring needs. You'll get a clear conversation focused on scope—not pressure.`}
+        body={body}
         primaryLabel="Request an Estimate"
         primaryHref="/#contact"
         secondaryLabel="Email us"

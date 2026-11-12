@@ -18,8 +18,7 @@ const defaultOrbitData: TimelineItem[] = [
     id: 1,
     title: "Inquiry",
     date: "Step 01",
-    content:
-      "Share your floor installation needs in Olathe—new hardwood, replacement, or remodel rooms.",
+    content: "Reach out today to discuss your flooring needs and options.",
     category: "Start",
     icon: MessagesSquare,
     relatedIds: [2],
@@ -33,7 +32,7 @@ const defaultOrbitData: TimelineItem[] = [
     title: "Scope",
     date: "Step 02",
     content:
-      "We review rooms, product preferences, and site conditions so the install scope is clear before estimating.",
+      "We outline project requirements, materials, timeline, and accurate estimates.",
     category: "Planning",
     icon: ClipboardList,
     relatedIds: [1, 3],
@@ -47,7 +46,7 @@ const defaultOrbitData: TimelineItem[] = [
     title: "Layout",
     date: "Step 03",
     content:
-      "Accurate layout sets starting lines, transitions, and cuts so the hardwood stays even and true.",
+      "We carefully plan room measurements and prep surfaces for installation.",
     category: "Craft",
     icon: Ruler,
     relatedIds: [2, 4],
@@ -61,7 +60,7 @@ const defaultOrbitData: TimelineItem[] = [
     title: "Install",
     date: "Step 04",
     content:
-      "Hardwood floor installation with careful fastening, clean cuts, and attention to every doorway.",
+      "Our team expertly lays down your new flooring with precision.",
     category: "Build",
     icon: Layers,
     relatedIds: [3, 5],
@@ -75,7 +74,7 @@ const defaultOrbitData: TimelineItem[] = [
     title: "Finish",
     date: "Step 05",
     content:
-      "Rooms, hallways, and transitions come together as a cohesive hardwood floor throughout the home.",
+      "We apply premium stains, sealants, and polishes for longevity.",
     category: "Build",
     icon: Home,
     relatedIds: [4, 6],
@@ -89,7 +88,7 @@ const defaultOrbitData: TimelineItem[] = [
     title: "Handoff",
     date: "Step 06",
     content:
-      "We wrap the install and coordinate follow-up so trim and everyday living can move forward.",
+      "We inspect the completed project with you to ensure satisfaction.",
     category: "Finish",
     icon: CheckCircle2,
     relatedIds: [5],
@@ -102,16 +101,29 @@ const defaultOrbitData: TimelineItem[] = [
 
 type AboutOrbitProps = {
   serviceImages?: MediaImage[];
+  steps?: { title: string; content: string }[];
 };
 
-export function AboutOrbit({ serviceImages }: AboutOrbitProps = {}) {
+export function AboutOrbit({
+  serviceImages,
+  steps,
+}: AboutOrbitProps = {}) {
+  const withCopy = steps?.length
+    ? defaultOrbitData.map((item, index) => {
+        const step = steps[index];
+        return step
+          ? { ...item, title: step.title, content: step.content }
+          : item;
+      })
+    : defaultOrbitData;
+
   const timelineData =
     serviceImages && serviceImages.length > 0
-      ? defaultOrbitData.map((item, index) => {
+      ? withCopy.map((item, index) => {
           const photo = serviceImages[index % serviceImages.length];
           return { ...item, image: photo.src };
         })
-      : defaultOrbitData;
+      : withCopy;
 
   const center = serviceImages?.[0] ?? {
     src: "/images/hero/floor-detail.jpg",

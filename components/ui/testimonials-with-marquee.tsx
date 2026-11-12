@@ -35,7 +35,7 @@ export default function TestimonialsMarquee({
         <div className="flex flex-col items-center gap-4 px-5 py-8 text-center md:px-8 md:py-10">
           <h2
             id="testimonials-heading"
-            className="max-w-4xl font-display text-4xl font-semibold tracking-tight text-foreground md:text-6xl"
+            className="max-w-4xl font-display text-[clamp(1.4rem,2.8vw,2.25rem)] font-semibold leading-[1.18] tracking-[-0.015em] text-foreground"
           >
             {titleWords.map((word, index) => (
               <motion.span

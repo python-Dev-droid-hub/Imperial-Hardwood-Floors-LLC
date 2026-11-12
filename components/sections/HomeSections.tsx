@@ -16,18 +16,24 @@ type HomeSectionsProps = {
 /** Shared below-the-fold sections used on every marketing page. */
 export function HomeSections({ service }: HomeSectionsProps = {}) {
   const images = service ? pickServiceImages(service, 7) : undefined;
+  const overrides = service?.sectionOverrides;
 
   return (
     <>
-      <About serviceImages={images} />
-      <Services serviceImages={images?.slice(0, 3)} />
+      <About serviceImages={images} content={overrides?.about} orbitSteps={overrides?.orbitSteps} />
+      <Services
+        serviceImages={images?.slice(0, 3)}
+        title={overrides?.services?.title}
+        items={overrides?.services?.items}
+      />
       <CtaBanner
         backgroundImage={images?.[0]}
         serviceName={service?.name}
+        content={overrides?.cta}
       />
       <Reviews />
-      <ServiceArea />
-      <Faq />
+      <ServiceArea content={overrides?.serviceArea} />
+      <Faq content={overrides?.faq} />
       <Contact />
     </>
   );

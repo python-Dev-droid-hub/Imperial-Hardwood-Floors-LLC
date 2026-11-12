@@ -31,7 +31,7 @@ export function SectionHeading({
       </p>
       <h2
         id={id}
-        className={`font-display text-[clamp(1.85rem,4vw,3rem)] font-semibold leading-[1.05] tracking-[-0.02em] ${
+        className={`font-display text-[clamp(1.4rem,2.8vw,2.25rem)] font-semibold leading-[1.18] tracking-[-0.015em] ${
           onDark ? "text-ivory" : "text-charcoal"
         }`}
       >
