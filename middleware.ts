@@ -3,8 +3,8 @@ import type { NextRequest } from "next/server";
 
 /**
  * Security headers for all responses.
- * CSP allows self assets, Unsplash images, OSM map iframe, and inline styles
- * used by Next/font + existing UI.
+ * CSP allows self assets, Unsplash images, OSM map iframe, GTM/Analytics,
+ * and inline styles used by Next/font + existing UI.
  * `unsafe-eval` is only for development (React/Turbopack debugging).
  */
 export function middleware(_request: NextRequest) {
@@ -18,13 +18,13 @@ export function middleware(_request: NextRequest) {
     "frame-ancestors 'none'",
     "object-src 'none'",
     isDev
-      ? "script-src 'self' 'unsafe-inline' 'unsafe-eval'"
-      : "script-src 'self' 'unsafe-inline'",
+      ? "script-src 'self' 'unsafe-inline' 'unsafe-eval' https://www.googletagmanager.com https://www.google-analytics.com"
+      : "script-src 'self' 'unsafe-inline' https://www.googletagmanager.com https://www.google-analytics.com",
     "style-src 'self' 'unsafe-inline'",
-    "img-src 'self' data: blob: https://images.unsplash.com",
+    "img-src 'self' data: blob: https://images.unsplash.com https://www.googletagmanager.com https://www.google-analytics.com",
     "font-src 'self' data:",
-    "connect-src 'self'",
-    "frame-src https://www.openstreetmap.org",
+    "connect-src 'self' https://www.googletagmanager.com https://www.google-analytics.com https://*.google-analytics.com https://*.analytics.google.com",
+    "frame-src https://www.openstreetmap.org https://www.googletagmanager.com",
     "upgrade-insecure-requests",
   ].join("; ");
 
