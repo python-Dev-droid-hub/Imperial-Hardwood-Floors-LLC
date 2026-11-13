@@ -5,10 +5,6 @@ import { getSiteUrl } from "@/lib/site-url";
 /** Indexable marketing routes for search engines. */
 export default function sitemap(): MetadataRoute.Sitemap {
   const siteUrl = getSiteUrl();
-  if (!siteUrl) {
-    return [];
-  }
-
   const now = new Date();
 
   const serviceEntries: MetadataRoute.Sitemap = getAllServicePaths().map(
